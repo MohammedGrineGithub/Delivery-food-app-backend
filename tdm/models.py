@@ -10,24 +10,26 @@ class Wilaya(models.Model):
 class Location(models.Model):
     address = models.TextField()
     wilaya = models.ForeignKey(Wilaya, on_delete=models.CASCADE)
-    map_link = models.URLField(max_length=200)
+    latitude = models.FloatField(default=0.0)
+    longitude = models.FloatField(default=0.0)
 
 class AppImage(models.Model):
-    image = models.ImageField()
+    imagePath = models.URLField(default='https://example.com/default-image.jpg')
 
 class CuisingType(models.Model):
     name = models.CharField(max_length=255)
 
 class Rating(models.Model):
     reviewers_count = models.PositiveIntegerField(default=0)
-    rating = models.FloatField()
+    rating = models.FloatField(default=0.0)
+
 class CustomUserManager(BaseUserManager):
-    def create_user(self, phone, password=None, **extra_fields):
-        if not phone:
-            raise ValueError('The Phone number field must be set')
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError('The Email field must be set')
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
-        user.set_password(password) 
+        user.set_password(password)
         user.save(using=self._db)
         return user
 
@@ -37,13 +39,14 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 class Customer(AbstractBaseUser):
     full_name = models.CharField(max_length=255)
-    email = models.EmailField(max_length=255)
-    phone = models.CharField(max_length=15,unique=True)
+    email = models.EmailField(max_length=255,unique = True)
+    phone = models.CharField(max_length=15, unique=True)
     location = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True, blank=True)
     password = models.CharField(max_length=255)
     photo = models.ForeignKey(AppImage, on_delete=models.SET_NULL, null=True, blank=True)
+    has_notification = models.BooleanField(default=False)
     REQUIRED_FIELDS = ['full_name' , 'password']
-    USERNAME_FIELD = 'phone'
+    USERNAME_FIELD = 'email'
     objects = CustomUserManager()
 
 
@@ -59,8 +62,8 @@ class Restaurant(models.Model):
     rating = models.OneToOneField(Rating, on_delete=models.CASCADE)
     phone = models.CharField(max_length=15, unique=True)
     email = models.EmailField(unique=True)
-    delivery_price = models.DecimalField(max_digits=10, decimal_places=2)
-    delivery_duration = models.DurationField()
+    delivery_price = models.IntegerField()
+    delivery_duration = models.IntegerField()
     menu = models.OneToOneField(RestaurantMenu, on_delete=models.CASCADE)
     opening_time = models.TimeField()
     closing_time = models.TimeField()
@@ -96,7 +99,7 @@ class Order(models.Model):
     ]
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
-    total_price = models.DecimalField(max_digits=10, decimal_places=2)
+    total_price = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.SmallIntegerField(choices=STATUS_CHOICES, default=0)
     delivery_note = models.TextField(null=True, blank=True)
