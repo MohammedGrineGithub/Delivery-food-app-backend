@@ -89,19 +89,19 @@ class DeliveryPerson(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
 
 class Order(models.Model):
-    STATUS_CHOICES = [
+    """ STATUS_CHOICES = [
         (0, 'Waiting'),
         (1, 'Prepared'),
         (2, 'Picked Up'),
         (3, 'On Way'),
         (4, 'Delivered'),
         (5, 'Canceled'),
-    ]
+    ] """
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     total_price = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
-    status = models.SmallIntegerField(choices=STATUS_CHOICES, default=0)
+    status = models.SmallIntegerField(default=0)
     delivery_note = models.TextField(null=True, blank=True)
     delivery_person = models.ForeignKey(DeliveryPerson, on_delete=models.SET_NULL, null=True, blank=True)
 

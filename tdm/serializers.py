@@ -131,7 +131,7 @@ class CustomerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Customer
-        fields = ['id', 'full_name', 'email', 'phone', 'password', 'location', 'photo']
+        fields = "__all__"
         extra_kwargs = {
             'password': {'write_only': True}  # Ensure password is write-only
         }
@@ -183,4 +183,8 @@ class OrderSerializer(serializers.ModelSerializer):
 class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
+        fields = '__all__'
+class DeliveryPersonSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DeliveryPerson
         fields = '__all__'
