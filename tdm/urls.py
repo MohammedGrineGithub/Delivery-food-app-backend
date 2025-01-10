@@ -26,6 +26,7 @@ urlpatterns = [
         path('order_history/<int:id>/', views.CustomerOrdersView.as_view(), name='order_history'),
         path('order/', views.CreateOrderView.as_view(), name='order'),
         path('change_password/', views.ChangeCustomerPasswordView.as_view(), name='change_password'),
+        path('order_detail/<int:id>/', views.OrderDetailsView.as_view(), name='order_detail'),
         ])),
     path('create/', include([
         path('wilaya/', views.CreateMultipleWilayas.as_view(), name='wilaya_create'),
@@ -38,5 +39,6 @@ urlpatterns = [
     ),
     path('app/', include([ 
      path('change_status/', views.ChangeOrderStatusView.as_view(), name='change_status'),                       
-    ]))
+    ])),
+    path('auth/google/', views.GoogleLogin.as_view(), name='google_login'),
 ]

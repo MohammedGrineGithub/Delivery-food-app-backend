@@ -9,7 +9,8 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.filters import SearchFilter
 from django.contrib.auth.hashers import check_password
 import random
-import json
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from dj_rest_auth.registration.views import SocialLoginView
 
 
 # ================ CREATION FUNCTIONS =================
@@ -199,6 +200,36 @@ class CreateOrderView(APIView):
         user.has_notification = True
         user.save()
         return Response({"message": "Order and order items created successfully"}, status=status.HTTP_201_CREATED)
+class OrderDetailsView(APIView):
+    def get(self, request, *args, **kwargs):
+        order_id = kwargs.get('id')
+
+        if not order_id:
+            return Response({"error": "Order ID and Restaurant ID are required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            order = Order.objects.get(id=order_id)
+        except Order.DoesNotExist:
+            return Response({"error": "Order not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        restaurant = order.restaurant
+        restaurant_data = RestaurantOverViewSerializer(restaurant).data
+        order_data = OrderSerializer(order).data
+
+        order_items = OrderItem.objects.filter(order=order.id)
+        order_items_data = OrderItemSerializer(order_items, many=True).data
+
+        delivery_person = order.delivery_person
+        delivery_person_data = DeliveryPersonSerializer(delivery_person).data
+
+        response_data = {
+            "restaurant": restaurant_data,
+            "order": order_data,
+            "order_items": order_items_data,
+            "delivery_person": delivery_person_data
+        }
+
+        return Response(response_data, status=status.HTTP_200_OK)
 class CreateMultipleDeliveryPersons(APIView):
     def post(self, request, *args, **kwargs):
         delivery_persons_data = request.data.get('delivery_persons', [])
@@ -491,3 +522,5 @@ class ChangeOrderStatusView(APIView):
         user.save()
 
         return Response({"message": "Order status changed successfully"}, status=status.HTTP_200_OK)
+class GoogleLogin(SocialLoginView):
+    adapter_class = GoogleOAuth2Adapter

@@ -26,9 +26,17 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
+    'rest_framework.authtoken' , 
     "corsheaders" ,
-    "rest_framework_simplejwt"
-]
+    "rest_framework_simplejwt",
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+    ]
 
 
 INSTALLED_APPS = [
@@ -42,6 +50,8 @@ INSTALLED_APPS = [
     *THIRD_PARTY_APPS
 ]
 
+SITE_ID =  1 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -50,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -143,8 +154,33 @@ SIMPLE_JWT = {
 }
 AUTH_USER_MODEL = "tdm.Customer"
 
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'tdm.serializers.CustomerSerializer',
+}
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+        'APP': {
+            'client_id': '128459024532-6iv3d6kl3q7t5ld781ihodq8icbb0svn.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        }
+    }
+}
