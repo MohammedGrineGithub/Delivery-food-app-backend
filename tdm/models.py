@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser , BaseUserManager
+import json
 
 class Wilaya(models.Model):
     name = models.CharField(max_length=255)
@@ -14,7 +15,7 @@ class Location(models.Model):
     longitude = models.FloatField(default=0.0)
 
 class AppImage(models.Model):
-    imagePath = models.URLField(default='https://example.com/default-image.jpg')
+    url = models.CharField(max_length=255)
 
 class CuisingType(models.Model):
     name = models.CharField(max_length=255)
@@ -86,8 +87,6 @@ class Item(models.Model):
 class DeliveryPerson(models.Model):
     full_name = models.CharField(max_length=255)
     phone = models.CharField(max_length=15)
-    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
-
 class Order(models.Model):
     """ STATUS_CHOICES = [
         (0, 'Waiting'),

@@ -26,7 +26,13 @@ class UserPhoneLoginSerializer(serializers.ModelSerializer):
             else :
                 if user['password'] != data['password']:
                     return serializers.ValidationError("Invalid password.")
-                       
+                     
+class CuisinTypeSerializer(serializers.ModelSerializer) :
+    class Meta :
+        model = CuisingType
+        fields = "__all__"
+        
+                             
 class CustomTokenObtainPairSerializerForEmail(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
@@ -50,71 +56,34 @@ class RatingSerrializer(serializers.ModelSerializer) :
 class ImageSerializer(serializers.ModelSerializer) :
     class Meta:
         model = AppImage
-        fields = ['id', 'imagePath']
+        fields = "__all__"
         
         
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
-        fields = ['wilayaId', 'address', 'latitude', 'longitude']
-
+        fields = "__all__"
+class MenuSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RestaurantMenu
+        fields = "__all__"
 class RestaurantSerializer(serializers.ModelSerializer):
-    logo = ImageSerializer()
-    banner_logo = ImageSerializer()
-    location = serializers.PrimaryKeyRelatedField(queryset=Location.objects.all())
-    cuisine_type = serializers.PrimaryKeyRelatedField(queryset=CuisingType.objects.all())
-    rating = RatingSerrializer()
-    menu = serializers.PrimaryKeyRelatedField(queryset=RestaurantMenu.objects.all())
     class Meta:
         model = Restaurant
-        fields = '__all__'
-
-    def create(self, validated_data):
-        logo_data = validated_data.pop('logo')
-        banner_logo_data = validated_data.pop('banner_logo')
-        rating_data = validated_data.pop('rating')
-        menu_data = validated_data.pop('menu')
-        location_data = validated_data.pop('location')
-        cuisine_type_data = validated_data.pop('cuisine_type')
-        
-        logo = AppImage.objects.create(**logo_data)
-        banner_logo = AppImage.objects.create(**banner_logo_data)
-        rating = Rating.objects.create(**rating_data)
-        menu = RestaurantMenu.objects.create() if menu_data is None else menu_data 
-        location = Location.objects.create(**location_data)
-        cuisine_type = CuisingType.objects.create(**cuisine_type_data)
-
-        restaurant = Restaurant.objects.create(
-            logo=logo,
-            banner_logo=banner_logo,
-            rating=rating,
-            menu=menu,
-            location=location,
-            cuisine_type=cuisine_type,
-            **validated_data
-        )        
-        return restaurant
+        fields = [field.name for field in Restaurant._meta.fields if field.name != "id"]
+class RestaurantDetailsSerializer(serializers.ModelSerializer):
+    logo = ImageSerializer()
+    banner_logo = ImageSerializer()
+    location = LocationSerializer()
+    rating = RatingSerrializer()
+    class Meta:
+        model = Restaurant
+        fields = "__all__"      
     
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = '__all__'
-
-class RestaurantMenuCreationSerializer(serializers.ModelSerializer):
-    categories = CategorySerializer(many=True)
-    class Meta:
-        model = RestaurantMenu
-        fields = '__all__'
-
-    def create(self, validated_data):
-        categories_data = validated_data.pop('categories')
-        restaurant_menu = RestaurantMenu.objects.create(**validated_data)
-        for category_data in categories_data:
-            items_data = category_data.pop('items', [])
-            category = Category.objects.create(menu=restaurant_menu, **category_data)
-            for item_data in items_data:
-                Item.objects.create(category=category, **item_data)
-        return restaurant_menu
+        fields = "__all__"
     
    
 class RestaurantOverViewSerializer(serializers.ModelSerializer):
@@ -123,7 +92,7 @@ class RestaurantOverViewSerializer(serializers.ModelSerializer):
     rating = RatingSerrializer()
     class Meta:
         model = Restaurant
-        fields = ['id', 'restaurant_name', 'logo', 'banner_logo', 'rating', 'delivery_price', 'delivery_duration','open_time', 'close_time']
+        fields = ['id', 'restaurant_name', 'logo', 'banner_logo', 'rating', 'delivery_price', 'delivery_duration','opening_time', 'closing_time']
  
 class CustomerSerializer(serializers.ModelSerializer):
     photo = ImageSerializer(required=False)
@@ -159,10 +128,31 @@ class CustomerSerializer(serializers.ModelSerializer):
         )
         
         return customer 
-class CuisinTypeSerializer(serializers.ModelSerializer) :
-    class Meta :
-        model = CuisingType
-        fields = "__all__"
+    def update(self, instance, validated_data):
+        photo_data = validated_data.pop('photo', None)
+        location_data = validated_data.pop('location', None)
+
+        if photo_data:
+            if instance.photo:
+                for attr, value in photo_data.items():
+                    setattr(instance.photo, attr, value)
+                instance.photo.save()
+            else:
+                instance.photo = AppImage.objects.create(**photo_data)
+
+        if location_data:
+            if instance.location:
+                for attr, value in location_data.items():
+                    setattr(instance.location, attr, value)
+                instance.location.save()
+            else:
+                instance.location = Location.objects.create(**location_data)
+
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+
+        instance.save()
+        return instance
         
         
 class ItemSerializer(serializers.ModelSerializer):  
@@ -170,8 +160,21 @@ class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = '__all__'
+    def create(self, validated_data):
+        photo_data = validated_data.pop('photo', None)
+        category_data = validated_data.pop('category')
 
+        category = Category.objects.get(id=category_data.id)
+        photo = AppImage.objects.create(**photo_data) if photo_data else None
 
+        item = Item.objects.create(category=category, photo=photo, **validated_data)
+
+        return item
+
+class LinkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Link
+        fields = '__all__'
 class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification
@@ -187,4 +190,8 @@ class OrderItemSerializer(serializers.ModelSerializer):
 class DeliveryPersonSerializer(serializers.ModelSerializer):
     class Meta:
         model = DeliveryPerson
+        fields = '__all__'
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
         fields = '__all__'
