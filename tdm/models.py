@@ -80,7 +80,7 @@ class Category(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=255)
     ingredients = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.FloatField(default=0.0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     photo = models.ForeignKey(AppImage, on_delete=models.SET_NULL, null=True, blank=True)
 

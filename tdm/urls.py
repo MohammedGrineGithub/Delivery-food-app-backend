@@ -10,7 +10,7 @@ urlpatterns = [
         ]) ),         
     path('restaurant/', include([
         path('all/', views.Restaurants.as_view(), name='restaurants_overview'),
-        path('detail/<int:id>/', views.RestaurantDetails.as_view(), name='restaurant_detail'),
+        path('details/<int:id>/', views.RestaurantDetails.as_view(), name='restaurant_detail'),
         path('filter/', views.FilterRestaurant.as_view(), name='restaurant_filter'),
         path('menu/<int:id>/', views.RestaurantMenuView.as_view(), name='restaurant_menu'),
         path('links/<int:id>/', views.RestaurantLinksView.as_view(), name='restaurant_links'),

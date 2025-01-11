@@ -187,7 +187,7 @@ class CreateOrderView(APIView):
 
         notification_data = {
             "customer": user.id,
-            "message": "Your order has been created successfully.",
+            "message": "Your order is now ",
             "order": order.id
         }
         notification_serializer = NotificationSerializer(data=notification_data)
@@ -358,10 +358,10 @@ class CustomerNotificationsView(APIView):
         try:
             customer = Customer.objects.get(id=customer_id)
         except Customer.DoesNotExist:
-            return Response({"error": "Customer not found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Customer not found "}, status=status.HTTP_404_NOT_FOUND)
         
         notifications = Notification.objects.filter(customer=customer_id)
-        serializer = NotificationSerializer(notifications, many=True)
+        serializer = NotificationInformationSerializer(notifications, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
 class CustomerOrdersView(APIView):
@@ -452,7 +452,8 @@ class RestaurantMenuView(APIView):
         for category in categories:
             items = Item.objects.filter(category=category)
             category_data = {
-                "category": category.name,
+                "id" : category.id,
+                "name": category.name,
                 "items": ItemSerializer(items, many=True).data
             }
             response_data.append(category_data)
@@ -461,7 +462,7 @@ class RestaurantMenuView(APIView):
 
 class Restaurants(ListAPIView) :
     queryset = Restaurant.objects.all()
-    serializer_class = RestaurantOverViewSerializer
+    serializer_class = RestaurantDetailsSerializer
 
 class RateRestaurantView(APIView):
     def post(self, request, *args, **kwargs):

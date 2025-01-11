@@ -52,7 +52,7 @@ class CustomTokenObtainPairSerializerPhoneNumber(TokenObtainPairSerializer):
 class RatingSerrializer(serializers.ModelSerializer) :
     class Meta :
         model = Rating
-        fields = [ 'rating' , 'reviewers_count' ]
+        fields = "__all__"
 class ImageSerializer(serializers.ModelSerializer) :
     class Meta:
         model = AppImage
@@ -195,3 +195,27 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = '__all__'
+class NotificationInformationSerializer(serializers.ModelSerializer):
+    restaurant_name = serializers.SerializerMethodField()
+    created_at = serializers.SerializerMethodField()
+    message = serializers.SerializerMethodField()
+    class Meta:
+        model = Notification
+        fields = ['id', 'message', 'created_at', 'restaurant_name']
+
+    def get_restaurant_name(self, obj):
+        return obj.order.restaurant.restaurant_name if obj.order and obj.order.restaurant else None
+
+    def get_message(self, obj):
+        STATUS_CHOICES = [
+        (0, 'Waiting'),
+        (1, 'Prepared'),
+        (2, 'Picked Up'),
+        (3, 'On Way'),
+        (4, 'Delivered'),
+        (5, 'Canceled'),
+        ]
+        order_status = STATUS_CHOICES[obj.order.status][1]
+        return f"Your order is now {order_status} "
+    def get_created_at(self, obj):
+        return obj.created_at.strftime("%Y-%m-%d %H:%M:%S")
