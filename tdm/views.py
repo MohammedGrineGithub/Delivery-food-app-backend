@@ -494,7 +494,20 @@ class RateRestaurantView(APIView):
 
 # ================================================================================= 
     
-    
+class UpdateHasNotificationView(APIView):
+    def put(self, request, *args, **kwargs):
+        user_id = kwargs.get('id')
+        if not user_id:
+            return Response({"error": "User ID not provided"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            user = Customer.objects.get(id=user_id)
+        except Customer.DoesNotExist:
+            return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+        user.has_notification = False
+        user.save()
+        return Response({"message": "User notification status changed successfully"}, status=status.HTTP_200_OK)
 
 # ========================= INTERMÉDIAIRE FUNCTIONS =======================================
 
@@ -525,3 +538,21 @@ class ChangeOrderStatusView(APIView):
         return Response({"message": "Order status changed successfully"}, status=status.HTTP_200_OK)
 class GoogleLogin(SocialLoginView):
     adapter_class = GoogleOAuth2Adapter
+    
+# =================================================================================
+class UpdateCustomerViewv2(APIView):
+        def put(self, request, *args, **kwargs):
+            customer_id = kwargs.get('id')
+            if not customer_id:
+                return Response({"error": "Customer ID not provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+            try:
+                customer = Customer.objects.get(id=customer_id)
+            except Customer.DoesNotExist:
+                return Response({"error": "Customer not found"}, status=status.HTTP_404_NOT_FOUND)
+
+            serializer = CustomerUpdateSerializer(customer, data=request.data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

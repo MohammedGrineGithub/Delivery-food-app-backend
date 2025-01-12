@@ -93,7 +93,43 @@ class RestaurantOverViewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
         fields = ['id', 'restaurant_name', 'logo', 'banner_logo', 'rating', 'delivery_price', 'delivery_duration','opening_time', 'closing_time']
- 
+        
+        
+class CustomerUpdateSerializer(serializers.ModelSerializer):
+    photo = ImageSerializer(required=False)
+    location = LocationSerializer(required=False)
+
+    class Meta:
+        model = Customer
+        fields = ["id", "full_name", "phone", "photo", "location", "has_notification"]
+
+    def update(self, instance, validated_data):
+        photo_data = validated_data.pop('photo', None)
+        location_data = validated_data.pop('location', None)
+
+        if photo_data:
+            if instance.photo:
+                for attr, value in photo_data.items():
+                    setattr(instance.photo, attr, value)
+                instance.photo.save()
+            else:
+                instance.photo = AppImage.objects.create(**photo_data)
+
+        if location_data:
+            if instance.location:
+                for attr, value in location_data.items():
+                    setattr(instance.location, attr, value)
+                instance.location.save()
+            else:
+                instance.location = Location.objects.create(**location_data)
+
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+
+        instance.save()
+        return instance
+    
+    
 class CustomerSerializer(serializers.ModelSerializer):
     photo = ImageSerializer(required=False)
     location = LocationSerializer(required=False)
