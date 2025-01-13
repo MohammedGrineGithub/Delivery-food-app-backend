@@ -87,6 +87,7 @@ class Item(models.Model):
 class DeliveryPerson(models.Model):
     full_name = models.CharField(max_length=255)
     phone = models.CharField(max_length=15)
+    
 class Order(models.Model):
     """ STATUS_CHOICES = [
         (0, 'Waiting'),
@@ -103,6 +104,15 @@ class Order(models.Model):
     status = models.SmallIntegerField(default=0)
     delivery_note = models.TextField(null=True, blank=True)
     delivery_person = models.ForeignKey(DeliveryPerson, on_delete=models.SET_NULL, null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self._state.adding:
+            Notification.objects.create(
+                customer=self.customer,
+                order=self,
+                message="Your order is now Waiting"
+            )
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)

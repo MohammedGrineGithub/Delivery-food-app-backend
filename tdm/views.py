@@ -200,6 +200,8 @@ class CreateOrderView(APIView):
         user.has_notification = True
         user.save()
         return Response({"message": "Order and order items created successfully"}, status=status.HTTP_201_CREATED)
+    
+    
 class OrderDetailsView(APIView):
     def get(self, request, *args, **kwargs):
         order_id = kwargs.get('id')
@@ -213,23 +215,27 @@ class OrderDetailsView(APIView):
             return Response({"error": "Order not found"}, status=status.HTTP_404_NOT_FOUND)
 
         restaurant = order.restaurant
-        restaurant_data = RestaurantOverViewSerializer(restaurant).data
-        order_data = OrderSerializer(order).data
+        restaurant_data = RestaurantDetailsSerializer(restaurant).data
 
         order_items = OrderItem.objects.filter(order=order.id)
-        order_items_data = OrderItemSerializer(order_items, many=True).data
+        order_items_data = OrderItemDetailSerializer(order_items, many=True).data
 
         delivery_person = order.delivery_person
         delivery_person_data = DeliveryPersonSerializer(delivery_person).data
-
+        
         response_data = {
             "restaurant": restaurant_data,
-            "order": order_data,
+            "id": order.id,
+            "created_at": order.created_at.strftime("%Y-%m-%d %H:%M:%S"),
+            "status": order.status,
+            "total_price": order.total_price,
+            "delivery_note": order.delivery_note,
             "order_items": order_items_data,
             "delivery_person": delivery_person_data
         }
 
         return Response(response_data, status=status.HTTP_200_OK)
+    
 class CreateMultipleDeliveryPersons(APIView):
     def post(self, request, *args, **kwargs):
         delivery_persons_data = request.data.get('delivery_persons', [])
@@ -379,9 +385,10 @@ class CustomerOrdersView(APIView):
         
         for order in orders:
             restaurant = order.restaurant
-            restaurant_data = RestaurantOverViewSerializer(restaurant).data
+            restaurant_data = RestaurantDetailsSerializer(restaurant).data
             order_data = OrderSerializer(order).data
             order_data['restaurant'] = restaurant_data
+            order_data['created_at'] = order.created_at.strftime("%Y-%m-%d %H:%M:%S")
             response_data.append(order_data)
         
         return Response(response_data, status=status.HTTP_200_OK)
@@ -512,6 +519,14 @@ class UpdateHasNotificationView(APIView):
 # ========================= INTERMÉDIAIRE FUNCTIONS =======================================
 
 class ChangeOrderStatusView(APIView):
+    STATUS_MESSAGES = {
+        0: 'Waiting',
+        1: 'Prepared',
+        2: 'Picked Up',
+        3: 'On Way',
+        4: 'Delivered',
+        5: 'Canceled',
+    }
     def post(self, request, *args, **kwargs):
         order_id = request.data.get('order_id')
         new_status = request.data.get('status')
@@ -534,6 +549,17 @@ class ChangeOrderStatusView(APIView):
         user.has_notification = True
         order.save()
         user.save()
+        
+        status_message = self.STATUS_MESSAGES.get(new_status, 'Unknown')
+        message = f"Your order is now {status_message}"
+        notification_data = {
+                "customer": user.id,
+                "message": message,
+                "order": order.id
+            }
+        notification_serializer = NotificationSerializer(data=notification_data)
+        if notification_serializer.is_valid():
+            notification_serializer.save()
 
         return Response({"message": "Order status changed successfully"}, status=status.HTTP_200_OK)
 class GoogleLogin(SocialLoginView):

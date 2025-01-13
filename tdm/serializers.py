@@ -223,6 +223,14 @@ class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
         fields = '__all__'
+        
+class OrderItemDetailSerializer(serializers.ModelSerializer):
+    item = ItemSerializer()
+
+    class Meta:
+        model = OrderItem
+        fields = ['id', 'note', 'item_quantity', 'item']
+        
 class DeliveryPersonSerializer(serializers.ModelSerializer):
     class Meta:
         model = DeliveryPerson
