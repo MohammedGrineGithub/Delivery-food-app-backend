@@ -1,3 +1,4 @@
+from datetime import timezone
 from django.http import JsonResponse
 from rest_framework.generics import CreateAPIView , ListAPIView , RetrieveAPIView , UpdateAPIView
 from rest_framework.response import Response
@@ -17,6 +18,10 @@ from dj_rest_auth.registration.views import SocialLoginView
 class CreateUserView(CreateAPIView):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
+    def create(self, request, *args, **kwargs):
+        response = super().create(request, *args, **kwargs)
+        user_id = response.data.get('id')
+        return Response({"message": "User created successfully", "user_id": user_id}, status=status.HTTP_201_CREATED)
     
     
 class CreateRestaurantView(APIView):
@@ -150,6 +155,7 @@ class CreateMultipleRestaurantLinks(APIView):
             created_links.append({"link_name": link.name, "link": link.url})
         
         return Response({"created_links": created_links}, status=status.HTTP_201_CREATED)
+    
 class CreateOrderView(APIView):
     def post(self, request, *args, **kwargs):
         order_data = request.data.get('order')
@@ -187,7 +193,7 @@ class CreateOrderView(APIView):
 
         notification_data = {
             "customer": user.id,
-            "message": "Your order is now ",
+            "message": "Your order is now Waiting",
             "order": order.id
         }
         notification_serializer = NotificationSerializer(data=notification_data)
@@ -201,7 +207,27 @@ class CreateOrderView(APIView):
         user.save()
         return Response({"message": "Order and order items created successfully"}, status=status.HTTP_201_CREATED)
     
-    
+class CreateUserPhotoView(APIView):
+    def post(self, request, *args, **kwargs):
+        user_id = request.data.get('user_id')
+        photo_data = request.data.get('photo')
+
+        if not user_id or not photo_data:
+            return Response({"error": "User ID and photo data are required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            user = Customer.objects.get(id=user_id)
+        except Customer.DoesNotExist:
+            return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        photo_serializer = ImageSerializer(data=photo_data)
+        if photo_serializer.is_valid():
+            photo = photo_serializer.save()
+            user.photo = photo
+            user.save()
+            return Response({"message": "Photo created successfully", "photo_id": photo.id}, status=status.HTTP_201_CREATED)
+        else:
+            return Response(photo_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 class OrderDetailsView(APIView):
     def get(self, request, *args, **kwargs):
         order_id = kwargs.get('id')
@@ -318,11 +344,18 @@ class CustomerUpdateView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class EmailLoginView(APIView):
-    def post(self, request, *args, **kwargs):
-        serializer = UserEmailLoginSerializer(data = request.data)
+    def post(self, request):
+        serializer = UserEmailLoginSerializer(data=request.data)
         if serializer.validate(request.data):
-            return Response({"message": "User logged in successfully."}, status=status.HTTP_202_ACCEPTED)
+            try:
+                user = Customer.objects.get(email=request.data['email'])
+                if not user.is_active:
+                    return Response({"error": "Account is not active"}, status=status.HTTP_403_FORBIDDEN)
+                return Response({"message": "User logged in successfully.", "user_id": user.id}, status=status.HTTP_202_ACCEPTED)
+            except Customer.DoesNotExist:
+                return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     
 class RestaurantCommentsView(APIView):
     def get(self, request, *args, **kwargs):
@@ -366,7 +399,7 @@ class CustomerNotificationsView(APIView):
         except Customer.DoesNotExist:
             return Response({"error": "Customer not found "}, status=status.HTTP_404_NOT_FOUND)
         
-        notifications = Notification.objects.filter(customer=customer_id)
+        notifications = Notification.objects.filter(customer=customer_id).order_by('created_at')
         serializer = NotificationInformationSerializer(notifications, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
@@ -392,7 +425,20 @@ class CustomerOrdersView(APIView):
             response_data.append(order_data)
         
         return Response(response_data, status=status.HTTP_200_OK)
-    
+ 
+
+class HasNotificationView(APIView):
+    def get(self, request, *args, **kwargs):
+        user_id = kwargs.get('id')
+        if not user_id:
+            return Response({"error": "User ID not provided"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            user = Customer.objects.get(id=user_id)
+        except Customer.DoesNotExist:
+            return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+        return Response({"has_notification": user.has_notification}, status=status.HTTP_200_OK)   
 class ChangeCustomerPasswordView(APIView):
     def post(self, request, *args, **kwargs):
         customer_id = request.data.get('id')
@@ -427,7 +473,7 @@ class SearchingForRestaurant(APIView):
         restaurant_name = request.data.get('restaurant_name', None)
         if restaurant_name:
             restaurants = Restaurant.objects.filter(restaurant_name__icontains=restaurant_name)
-            serializer = RestaurantOverViewSerializer(restaurants, many=True)
+            serializer = RestaurantDetailsSerializer(restaurants, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response({"error": "restaurant_name not provided"}, status=status.HTTP_400_BAD_REQUEST)
     
@@ -445,8 +491,38 @@ class FilterRestaurant(APIView):
         else:
             return Response({"error": "Neither wilaya nor cuisine provided"}, status=status.HTTP_400_BAD_REQUEST)
         
-        serializer = RestaurantOverViewSerializer(restaurants, many=True)
+        serializer = RestaurantDetailsSerializer(restaurants, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)   
+class DeleteCustomerNotificationsView(APIView):
+    def delete(self, request, *args, **kwargs):
+        customer_id = kwargs.get('id')
+        if not customer_id:
+            return Response({"error": "Customer ID not provided"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            customer = Customer.objects.get(id=customer_id)
+        except Customer.DoesNotExist:
+            return Response({"error": "Customer not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+        notifications = Notification.objects.filter(customer=customer_id)
+        notifications.delete()
+        
+        return Response({"message": "Notifications deleted successfully"}, status=status.HTTP_200_OK)
+class DeleteCustomerOrdersView(APIView):
+    def delete(self, request, *args, **kwargs):
+        customer_id = kwargs.get('id')
+        if not customer_id:
+            return Response({"error": "Customer ID not provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            customer = Customer.objects.get(id=customer_id)
+        except Customer.DoesNotExist:
+            return Response({"error": "Customer not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        orders = Order.objects.filter(customer=customer)
+        orders.delete()
+
+        return Response({"message": "Customer orders deleted successfully"}, status=status.HTTP_200_OK)
 class RestaurantMenuView(APIView):
     def get(self, request, *args, **kwargs):
         menu_id = kwargs.get('id')
@@ -476,6 +552,7 @@ class RateRestaurantView(APIView):
         restaurant_id = request.data.get('id')
         user_rating = request.data.get('rating')
         user_comment = request.data.get('comment')
+        order_id = request.data.get('order_id')
 
         if not restaurant_id or not user_rating:
             return Response({"error": "Restaurant ID and rating are required"}, status=status.HTTP_400_BAD_REQUEST)
@@ -484,17 +561,22 @@ class RateRestaurantView(APIView):
             restaurant = Restaurant.objects.get(id=restaurant_id)
         except Restaurant.DoesNotExist:
             return Response({"error": "Restaurant not found"}, status=status.HTTP_404_NOT_FOUND)
-
+        try:
+            order = Order.objects.get(id=order_id)
+        except Order.DoesNotExist:
+            return Response({"error": "Order not found"}, status=status.HTTP_404_NOT_FOUND)
         rating, _ = Rating.objects.get_or_create(restaurant=restaurant.id)
         rating.reviewers_count += 1
         rating.rating = ( rating.rating * (rating.reviewers_count - 1) + user_rating ) / rating.reviewers_count
         rating.save()
-
-        Comment.objects.create(
-            comment=user_comment,
-            rating=rating
-        )
-
+        user_comment= user_comment.lstrip()
+        if len(user_comment) > 0:
+            Comment.objects.create(
+                comment=user_comment,
+                rating=rating
+            )
+        order.status = 6
+        order.save()
         return Response({"message": "Rating and comment added successfully"}, status=status.HTTP_201_CREATED)
 
 
@@ -526,6 +608,7 @@ class ChangeOrderStatusView(APIView):
         3: 'On Way',
         4: 'Delivered',
         5: 'Canceled',
+        6: 'Rated'
     }
     def post(self, request, *args, **kwargs):
         order_id = request.data.get('order_id')
@@ -549,19 +632,24 @@ class ChangeOrderStatusView(APIView):
         user.has_notification = True
         order.save()
         user.save()
-        
-        status_message = self.STATUS_MESSAGES.get(new_status, 'Unknown')
-        message = f"Your order is now {status_message}"
-        notification_data = {
+
+        if new_status != 6 :
+            status_message = self.STATUS_MESSAGES.get(new_status, 'Unknown')
+            message = f"Your order is now {status_message}"
+            notification_data = {
                 "customer": user.id,
                 "message": message,
                 "order": order.id
             }
-        notification_serializer = NotificationSerializer(data=notification_data)
-        if notification_serializer.is_valid():
-            notification_serializer.save()
+            notification_serializer = NotificationSerializer(data=notification_data)
+            if notification_serializer.is_valid():
+                notification_serializer.save()
+            else:
+                return Response(notification_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         return Response({"message": "Order status changed successfully"}, status=status.HTTP_200_OK)
+    
+    
 class GoogleLogin(SocialLoginView):
     adapter_class = GoogleOAuth2Adapter
     
@@ -582,3 +670,62 @@ class UpdateCustomerViewv2(APIView):
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_200_OK)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+
+class UpdateCustomerPhoneNumberView(APIView):
+    def put(self, request, *args, **kwargs):
+        # Extract customer_id from URL kwargs
+        customer_id = kwargs.get('id')
+        
+        # Check if customer_id is provided
+        if not customer_id:
+            return Response({"error": "Customer ID not provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Check if 'phone' is provided in the request data
+        new_phone_number = request.data.get('phone')
+        if not new_phone_number:
+            return Response({"error": "Phone number not provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            # Retrieve the customer object
+            customer = Customer.objects.get(id=customer_id)
+            
+            # Update the phone number
+            customer.phone = new_phone_number
+            customer.save()
+            
+            # Return success response
+            return Response({"message": "Phone number updated successfully"}, status=status.HTTP_200_OK)
+        
+        except Customer.DoesNotExist:
+            # Handle case where customer does not exist
+            return Response({"error": "Customer not found"}, status=status.HTTP_404_NOT_FOUND)
+        
+        except Exception as e:
+            # Handle any other unexpected errors
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+class AllCuisineTypesView(ListAPIView):
+    queryset = CuisingType.objects.all()
+    serializer_class = CuisinTypeSerializer
+
+
+class UpdateRestaurantTimingsView(APIView):
+        def put(self, request, *args, **kwargs):
+            restaurant_id = kwargs.get('id')
+            opening_time = request.data.get('opening_time')
+            closing_time = request.data.get('closing_time')
+
+            if not restaurant_id or not opening_time or not closing_time:
+                return Response({"error": "Restaurant ID, opening time, and closing time are required"}, status=status.HTTP_400_BAD_REQUEST)
+
+            try:
+                restaurant = Restaurant.objects.get(id=restaurant_id)
+            except Restaurant.DoesNotExist:
+                return Response({"error": "Restaurant not found"}, status=status.HTTP_404_NOT_FOUND)
+
+            restaurant.opening_time = opening_time
+            restaurant.closing_time = closing_time
+            restaurant.save()
+
+            return Response({"message": "Restaurant timings updated successfully"}, status=status.HTTP_200_OK)

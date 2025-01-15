@@ -12,6 +12,7 @@ urlpatterns = [
         path('all/', views.Restaurants.as_view(), name='restaurants_overview'),
         path('details/<int:id>/', views.RestaurantDetails.as_view(), name='restaurant_detail'),
         path('filter/', views.FilterRestaurant.as_view(), name='restaurant_filter'),
+        path('search/', views.SearchingForRestaurant.as_view(), name='restaurant_search'),
         path('menu/<int:id>/', views.RestaurantMenuView.as_view(), name='restaurant_menu'),
         path('links/<int:id>/', views.RestaurantLinksView.as_view(), name='restaurant_links'),
         path('comments/<int:id>/', views.RestaurantCommentsView.as_view(), name='restaurant_comments'),
@@ -21,6 +22,7 @@ urlpatterns = [
         path('login/', views.EmailLoginView.as_view(), name='login_user'),
         path('details/<int:id>/', views.CustomerInformation.as_view(), name='user_details'),
         path('update/<int:id>/', views.CustomerUpdateView.as_view(), name='user_update'),
+        path('update/phone/<int:id>/', views.UpdateCustomerPhoneNumberView.as_view(), name='user_update_phone'),
         path('updatev2/<int:id>/', views.UpdateCustomerViewv2.as_view(), name='user_updatev2'),
         path('notifications/<int:id>/', views.CustomerNotificationsView.as_view(), name='user_notifications'),
         path('rate_order/', views.RateRestaurantView.as_view(), name='rate_order'),
@@ -29,6 +31,10 @@ urlpatterns = [
         path('change_password/', views.ChangeCustomerPasswordView.as_view(), name='change_password'),
         path('order_detail/<int:id>/', views.OrderDetailsView.as_view(), name='order_detail'),
         path('update_has_notifications/<int:id>/', views.UpdateHasNotificationView.as_view(), name='update_has_notifications'),
+        path('delete_notifications/<int:id>/', views.DeleteCustomerNotificationsView.as_view(), name='delete_user"s_notifications'),
+        path('delete_orders/<int:id>/', views.DeleteCustomerOrdersView.as_view(), name='delete_user"s_orders'),
+        path('create_photo/', views.CreateUserPhotoView.as_view(), name='create_photo'),
+        path('has_notification/<int:id>/', views.HasNotificationView.as_view(), name='has_notification'),
         ])),
     path('create/', include([
         path('wilaya/', views.CreateMultipleWilayas.as_view(), name='wilaya_create'),
@@ -40,7 +46,9 @@ urlpatterns = [
         ]),
     ),
     path('app/', include([ 
-     path('change_status/', views.ChangeOrderStatusView.as_view(), name='change_status'),                       
+     path('change_status/', views.ChangeOrderStatusView.as_view(), name='change_status'),
+     path('all_cuisine_types/', views.AllCuisineTypesView.as_view(), name='all_cuisine_types'),  
+     path('update_restaurant_opening_time/<int:id>/', views.UpdateRestaurantTimingsView.as_view(), name='update_restaurant_opening_time'),                   
     ])),
     path('auth/google/', views.GoogleLogin.as_view(), name='google_login'),
 ]

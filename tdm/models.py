@@ -15,7 +15,7 @@ class Location(models.Model):
     longitude = models.FloatField(default=0.0)
 
 class AppImage(models.Model):
-    url = models.TextField()
+    url = models.TextField(blank=True)
 
 class CuisingType(models.Model):
     name = models.CharField(max_length=255)

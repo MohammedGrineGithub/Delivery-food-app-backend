@@ -8,13 +8,16 @@ class UserEmailLoginSerializer(serializers.ModelSerializer):
     class Meta :
         model = Customer
         fields = ['email' , 'password']
-        def validate( self, data ):
-            user = Customer.objects.filter(email=data['email'])
-            if user is None :
-                return serializers.ValidationError("Email does not exist.")
-            else :
-                if user['password'] != data['password']:
-                    return serializers.ValidationError("Invalid password.")
+        def validate(self, data):
+            try:
+                user = Customer.objects.get(email=data['email'])
+            except Customer.DoesNotExist:
+                raise serializers.ValidationError("Email does not exist.")
+            
+            if not user.check_password(data['password']):
+                raise serializers.ValidationError("Invalid password.")
+            
+            return data
 class UserPhoneLoginSerializer(serializers.ModelSerializer):
     class Meta :
         model = Customer
@@ -39,6 +42,15 @@ class CustomTokenObtainPairSerializerForEmail(TokenObtainPairSerializer):
         token = super().get_token(user)
         token['email'] = user.email
         return token
+
+    def validate(self, attrs):
+        data = super().validate(attrs)
+        user = self.user
+
+        if not user.is_active:
+            raise serializers.ValidationError("No active account found with the given credentials")
+
+        return data
 class WilayaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Wilaya
@@ -70,7 +82,7 @@ class MenuSerializer(serializers.ModelSerializer):
 class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
-        fields = [field.name for field in Restaurant._meta.fields if field.name != "id"]
+        fields = "__all__"
 class RestaurantDetailsSerializer(serializers.ModelSerializer):
     logo = ImageSerializer()
     banner_logo = ImageSerializer()
@@ -239,6 +251,8 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = '__all__'
+        
+        
 class NotificationInformationSerializer(serializers.ModelSerializer):
     restaurant_name = serializers.SerializerMethodField()
     created_at = serializers.SerializerMethodField()
@@ -251,15 +265,6 @@ class NotificationInformationSerializer(serializers.ModelSerializer):
         return obj.order.restaurant.restaurant_name if obj.order and obj.order.restaurant else None
 
     def get_message(self, obj):
-        STATUS_CHOICES = [
-        (0, 'Waiting'),
-        (1, 'Prepared'),
-        (2, 'Picked Up'),
-        (3, 'On Way'),
-        (4, 'Delivered'),
-        (5, 'Canceled'),
-        ]
-        order_status = STATUS_CHOICES[obj.order.status][1]
-        return f"Your order is now {order_status} "
+        return obj.message
     def get_created_at(self, obj):
         return obj.created_at.strftime("%Y-%m-%d %H:%M:%S")
