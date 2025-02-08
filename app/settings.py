@@ -29,7 +29,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "corsheaders",
     'rest_framework.authtoken' , 
-    "rest_framework_simplejwt",
+    # "rest_framework_simplejwt",
     'django.contrib.sites',
     'dj_rest_auth',
     'dj_rest_auth.registration',
@@ -138,6 +138,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+'''
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=30),
@@ -147,14 +148,16 @@ SIMPLE_JWT = {
     "ALGORITHM": "HS256",
     "SIGNING_KEY": SECRET_KEY,
 }
+
 AUTH_USER_MODEL = "tdm.Customer"
+'''
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 REST_AUTH_SERIALIZERS = {
-    'USER_DETAILS_SERIALIZER': 'tdm.serializers.CustomerSerializer',
+    # 'USER_DETAILS_SERIALIZER': 'tdm.serializers.CustomerSerializer',
 }
 
 AUTHENTICATION_BACKENDS = [
