@@ -705,6 +705,14 @@ class AllCuisineTypesView(ListAPIView):
     queryset = CuisingType.objects.all()
     serializer_class = CuisinTypeSerializer
 
+class AllWilayasView(ListAPIView):
+    queryset = Wilaya.objects.all()
+    serializer_class = WilayaSerializerAll
+
+class AllDeliveryPersons(ListAPIView):
+    queryset = DeliveryPerson.objects.all()
+    serializer_class = DeliveryPersonSerializer
+
 
 class UpdateRestaurantTimingsView(APIView):
         def put(self, request, *args, **kwargs):
