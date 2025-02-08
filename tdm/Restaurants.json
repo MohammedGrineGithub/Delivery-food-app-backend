@@ -1,4 +1,5 @@
-{"Restaurant": [
+{
+    "Restaurant": [
     
     {                                                                            
                 "restaurant_name": "American Burger",
@@ -13,7 +14,7 @@
                 "cuisine_type":2,
                 "rating": {"reviewers_count": 0, "rating": 0.0},
                 "phone": "0556621469",  
-                "email": "",
+                "email": "american_burger@gmail.com",
                 "delivery_price": 400,
                 "delivery_duration": 30, 
                 "menu": [
@@ -248,10 +249,9 @@
 
                 "opening_time": "11:00:00",
                 "closing_time": "00:00:00"
-},
+    },
 
-
-{
+    {
     "restaurant_name": "Restaurant El Walima",
     "logo": {"url": "https://i.postimg.cc/c4sCG869/396280672-177653725397926-3401010228898050025-n.jpg"},
     "banner_logo": {"url": "https://i.postimg.cc/TP8XGZCd/419242851-243572912139340-8463432995848501914-n.png"},
@@ -264,7 +264,7 @@
     "cuisine_type": 1 ,
     "rating": {"reviewers_count": 0, "rating": 0.0},
     "phone": "0540754145",  
-    "email": "",
+    "email": "el_walima@gmail.com",
     "delivery_price": 400,
     "delivery_duration": 30, 
     "menu": [
@@ -368,10 +368,10 @@
                 
     "opening_time": "11:00:00",
     "closing_time": "23:00:00"
-},
+    },
 
 
-{
+    {
     "restaurant_name": "Maharaja Indian Restaurant",
     "logo": {"url": "https://i.postimg.cc/90YKbZ17/Maharaja-Logo-150x150.png"},
     "banner_logo": {"url": "https://i.postimg.cc/nrJNq0Kx/Presentation-accueil-900x1430.jpg"},
@@ -384,7 +384,7 @@
     "cuisine_type": 3 ,
     "rating": {"reviewers_count": 0, "rating": 0.0},
     "phone": "0550495562",  
-    "email": "",
+    "email": "mahraja_indian@gmail.com",
     "delivery_price": 400,
     "delivery_duration": 30, 
     "menu": [
@@ -539,10 +539,10 @@
 
 
 ]
-},
+    },
 
 
-{
+    {
     "restaurant_name": "Burger & Broast",
     "logo": {"url": "https://i.postimg.cc/T1Zwf8nx/Capture-d-cran-2025-01-09-175343.png"},
     "banner_logo": {"url": "https://i.postimg.cc/NfHFbMwj/Capture-d-cran-2025-01-09-175335.png"},
@@ -555,7 +555,7 @@
     "cuisine_type": 1 ,
     "rating": {"reviewers_count": 0, "rating": 0.0},
     "phone": "0559317595",  
-    "email": "",
+    "email": "burger_broast@gmail.com",
     "delivery_price": 400,
     "delivery_duration": 30, 
     "menu": [
@@ -787,9 +787,9 @@
                                 
 
                 ]
-},
+    },
 
-{
+    {
     "restaurant_name": "Tacozza",
     "logo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3a9bC67pnkc3h7JTXGnooTHeez0qpL6-9nQ&s"},
     "banner_logo": {"url": "https://images.eatself.com/2946/Products_212404_Products_212404_302455613_616628753445652_4740470279227947905_n_thumb.jpg"},
@@ -802,7 +802,7 @@
     "cuisine_type":2,
     "rating": {"reviewers_count": 0, "rating": 0.0},
     "phone": "0561748889",  
-    "email": "",
+    "email": "tacozza@gmail.com",
     "delivery_price": 500,
     "delivery_duration": 25, 
     "menu": [
@@ -875,10 +875,9 @@
 
     "opening_time": "11:00:00",
     "closing_time": "23:30:00"
-},
+    },
 
-
-{
+    {
 "restaurant_name": "La Casa del Burger",
 "logo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp4sbXWmiTVHZoWurURZGwbkLq8fQjzbxA1A&s"},
 "banner_logo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPe1ooGDuO457z9DmDAVf8mMSwA2Knlc1Ilw&s"},
@@ -891,7 +890,7 @@
 "cuisine_type": 2 ,
 "rating": {"reviewers_count": 0, "rating": 0.0},
 "phone": "0542742282",  
-"email": "",
+"email": "la_casa_del_burger@gmail.com",
 "delivery_price": 600,
 "delivery_duration": 35, 
 "menu": [
@@ -1105,11 +1104,9 @@
 ], 
 "opening_time": "10:00:00",
 "closing_time": "00:00:00"
-},
+    },
 
-
-
-{
+    {
 "restaurant_name": "Restaurant la Couronne",
 "logo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjesrxXcZMtKPXOiBmiXUsEBYZBptDT-ddFA&s"},
 "banner_logo": {"url": "https://media.safarway.com/content/1d488991-e209-465f-af8e-c307fa50814b_sm.jpg"},
@@ -1122,7 +1119,7 @@
 "cuisine_type": 1 ,
 "rating": {"reviewers_count": 0, "rating": 0.0},
 "phone": "0552169666",  
-"email": "",
+"email": "la_couronne@gmail.com",
 "delivery_price": 300,
 "delivery_duration": 15, 
 "menu": [
@@ -1180,292 +1177,8 @@
 ], 
 "opening_time": "05:00:00",
 "closing_time": "01:00:00"
-}
-
-
-
-
+    }
 
 ]
 
 } 
-
-
-
-
-
-"wilayas": [
-    {"name": "Adrar"},
-    {"name": "Chlef"},
-    {"name": "Laghouat"},
-    {"name": "Oum El Bouaghi"},
-    {"name": "Batna"},
-    {"name": "Béjaïa"},
-    {"name": "Biskra"},
-    {"name": "Béchar"},
-    {"name": "Blida"},
-    {"name": "Bouira"},
-    {"name": "Tamanrasset"},
-    {"name": "Tébessa"},
-    {"name": "Tlemcen"},
-    {"name": "Tiaret"},
-    {"name": "Tizi Ouzou"},
-    {"name": "Alger"},
-    {"name": "Djelfa"},
-    {"name": "Jijel"},
-    {"name": "Sétif"},
-    {"name": "Saïda"},
-    {"name": "Skikda"},
-    {"name": "Sidi Bel Abbès"},
-    {"name": "Annaba"},
-    {"name": "Guelma"},
-    {"name": "Constantine"},
-    {"name": "Médéa"},
-    {"name": "Mostaganem"},
-    {"name": "M'Sila"},
-    {"name": "Mascara"},
-    {"name": "Ouargla"},
-    {"name": "Oran"},
-    {"name": "El Bayadh"},
-    {"name": "Illizi"},
-    {"name": "Bordj Bou Arreridj"},
-    {"name": "Boumerdès"},
-    {"name": "El Tarf"},
-    {"name": "Tindouf"},
-    {"name": "Tissemsilt"},
-    {"name": "El Oued"},
-    {"name": "Khenchela"},
-    {"name": "Souk Ahras"},
-    {"name": "Tipaza"},
-    {"name": "Mila"},
-    {"name": "Aïn Defla"},
-    {"name": "Naâma"},
-    {"name": "Aïn Témouchent"},
-    {"name": "Ghardaïa"},
-    {"name": "Relizane"}
-  ],
-  "cuisine_type":[ 
-
-      {"name": "Traditional"},
-      { "name": "Fast Food"},
-      {"name": "Indian"},
-      {"name": "Mexican"},
-      {"name": "Japanese"},
-      {"name": "Lebanese"},
-      {"name": "French"},
-      {"name": "Turkish"},
-      {"name": "Spanish"},
-      {"name": "Chinese"},
-      {"name": "Japanese"},
-      {"name": "Korean"}   
-  ]
-
-
-  "Links":[
-
-    {
-        "name":"american burger facebook",
-        "url":"https://www.facebook.com/AmericanBurger16",
-        "restaurantId":1
-    },
-    {
-        "name":"american burger instagram",
-        "url":"https://www.instagram.com/american.burger_/",
-        "restaurantId":1
-    } ,
-    {
-        "name":"El Walima facebook",
-        "url":"https://www.facebook.com/people/El-Walima-Restaurant/100094598992395/",
-        "restaurantId":2
-    } ,
-    {
-        "name":"El Walima instagram",
-        "url":"https://www.instagram.com/restaurant_elwalima/",
-        "restaurantId":2
-    } ,
-    {
-        "name":"Maharaja Indian facebook",
-        "url":"https://www.facebook.com/maharaja.indian16",
-        "restaurantId":3
-    } ,
-    {
-        "name":"Maharaja Indian instagram",
-        "url":"https://www.instagram.com/maharaja.indian.restaurant/",
-        "restaurantId":3
-    } ,
-    {
-        "name":"Burger & Broast facebook",
-        "url":"https://www.facebook.com/Burger.and.Broast",
-        "restaurantId":4
-    } ,
-    {
-        "name":"Burger & Broast instagram",
-        "url":"https://www.instagram.com/burger.and.broast/",
-        "restaurantId":4
-    } ,
-    {
-        "name":"Tacozza facebook",
-        "url":"https://www.facebook.com/Tacozzadz/?locale=fr_FR",
-        "restaurantId":5
-    } ,
-    {
-        "name":"Tacozza instagram",
-        "url":"https://www.instagram.com/tacozza_dz/?hl=fr",
-        "restaurantId":5
-    } ,
-    {
-        "name":"La Casa del Burger facebook",
-        "url":"https://www.facebook.com/lacasadelburger/posts/-la-casa-del-burger-kouba-200-m%C3%A8tre-de-lh%C3%B4tel-az-vieux-kouba-%EF%B8%8F-0542742282/877027942913754/",
-        "restaurantId":6
-    } ,
-    {
-        "name":"La Casa del Burger instagram",
-        "url":"https://www.instagram.com/lacasa_del_burger/?hl=fr",
-        "restaurantId":6
-    } ,
-    {
-        "name":"Restaurant la Couronne facebook",
-        "url":"https://www.facebook.com/restaurantlacouronnetipaza/?locale=fr_FR",
-        "restaurantId":7
-    } ,
-    {
-        "name":"Restaurant la Couronne instagram",
-        "url":"https://www.instagram.com/explore/locations/2172592749477490/restaurant-la-couronne-tipaza/",
-        "restaurantId":7
-    } ,
-
-
-
-  ]
-
-  "Delivery Person":[
-
-    {
-        "fullName":"Mohamed GERINE",
-        "phone":"0550495562",
-    },
-    {
-        "fullName":"Sadaoui said",
-        "phone":"0570426537",
-    },
-    {
-        "fullName":"Imed Megded",
-        "phone":"0599565467",
-    },
-    {
-        "fullName":"walid nehar",
-        "phone":"0654651099",
-    }
-  ]
-
-
-
-
-  "Order":[
-  
-  {
-
-    "userId":1,
-    "restaurantId":1,
-    "totalPrice":2500,
-    "createdAt":"20/01/2022",
-    "status":1,
-    "deliveryNote":"Ya le livruer activier chwya ani ji3an",
-    "deliveryPersonId":1
-
-  },
-  {
-
-    "userId":1,
-    "restaurantId":2,
-    "totalPrice":3900,
-    "createdAt":"20/01/2024",
-    "status":3,
-    "deliveryNote":"Ya le livruer activier chwya ani ji3an",
-    "deliveryPersonId":2
-
-  },
-  {
-
-    "userId":1,
-    "restaurantId":3,
-    "totalPrice":5000,
-    "createdAt":"1/01/2025",
-    "status":2,
-    "deliveryNote":"Ya le livruer activier chwya ani ji3an",
-    "deliveryPersonId":3
-
-  },
-
-
-]
-
-
-{
-    "Users" : [
-     {
-         "fullName": "Slimane Zakaria",
-     "email": "zakslimane47@gmail.com",
-     "phone": "0582496327",
-     "location": {
-         "address": "Rue Albertini, El Biar",
-         "wilayaId": 16,
-         "latitude": 36.76968731472243,
-         "longitude":  3.01289939701471
-     },
-     "photo": {
-         "imagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlOOPcOx2GW8wa8Jh9_K23iiruRj16Me9QYw&s"
-     },
-     "has_notification": false,
-     "carts": []
-     },
-     {
-         "fullName": "Akram Charef",
-     "email": "bestcharef01@gmail.com",
-     "phone": "0554996357",
-     "location": {
-         "address": "Tipaza Centre",
-         "wilayaId": 42,
-         "latitude": 36.59174234300822,
-         "longitude":   2.449764368900062
-     },
-     "photo": {
-         "imagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBNYHBfUfHrvvxot_Hzofa5UQ-90k3nKxtkQ&s"
-     },
-     "has_notification": false,
-     "carts": []
-     },
-     {
-         "fullName": "Ahmed Sellami",
-     "email": "ahmedslm57@gmail.com",
-     "phone": "0587284917",
-     "location": {
-         "address": "Rue Hamidi Said, Birkhadem",
-         "wilayaId": 16,
-         "latitude":  36.71455088688122,
-         "longitude":  3.0487518627992256
-     },
-     "photo": {
-         "imagePath": "https://i.pinimg.com/originals/2c/26/dc/2c26dc21b282afeb87684683bb260375.jpg"
-     },
-     "has_notification": false,
-     "carts": []
-     },
-     {
-         "fullName": "Anes Amine Ferhat",
-     "email": "amineanes075@gmail.com",
-     "phone": "0642875193",
-     "location": {
-         "address": "Sidi El Mejdoub, Mostaland",
-         "wilayaId": 27,
-         "latitude": 35.95862702870066,
-         "longitude":  0.09542545352503205
-     },
-     "photo": {
-         "imagePath": "https://i.pinimg.com/280x280_RS/aa/2f/f9/aa2ff9de53d7d2b43382249dfb8c2ee8.jpg"
-     },
-     "has_notification": false,
-     "carts": []
-     }
- ]
- }

@@ -1,0 +1,161 @@
+{
+    "wilayas": [
+    {"name": "Adrar"},
+    {"name": "Chlef"},
+    {"name": "Laghouat"},
+    {"name": "Oum El Bouaghi"},
+    {"name": "Batna"},
+    {"name": "Béjaïa"},
+    {"name": "Biskra"},
+    {"name": "Béchar"},
+    {"name": "Blida"},
+    {"name": "Bouira"},
+    {"name": "Tamanrasset"},
+    {"name": "Tébessa"},
+    {"name": "Tlemcen"},
+    {"name": "Tiaret"},
+    {"name": "Tizi Ouzou"},
+    {"name": "Alger"},
+    {"name": "Djelfa"},
+    {"name": "Jijel"},
+    {"name": "Sétif"},
+    {"name": "Saïda"},
+    {"name": "Skikda"},
+    {"name": "Sidi Bel Abbès"},
+    {"name": "Annaba"},
+    {"name": "Guelma"},
+    {"name": "Constantine"},
+    {"name": "Médéa"},
+    {"name": "Mostaganem"},
+    {"name": "M'Sila"},
+    {"name": "Mascara"},
+    {"name": "Ouargla"},
+    {"name": "Oran"},
+    {"name": "El Bayadh"},
+    {"name": "Illizi"},
+    {"name": "Bordj Bou Arreridj"},
+    {"name": "Boumerdès"},
+    {"name": "El Tarf"},
+    {"name": "Tindouf"},
+    {"name": "Tissemsilt"},
+    {"name": "El Oued"},
+    {"name": "Khenchela"},
+    {"name": "Souk Ahras"},
+    {"name": "Tipaza"},
+    {"name": "Mila"},
+    {"name": "Aïn Defla"},
+    {"name": "Naâma"},
+    {"name": "Aïn Témouchent"},
+    {"name": "Ghardaïa"},
+    {"name": "Relizane"}
+  ],
+  "cuisine_type":[ 
+      {"name": "Traditional"},
+      { "name": "Fast Food"},
+      {"name": "Indian"},
+      {"name": "Mexican"},
+      {"name": "Japanese"},
+      {"name": "Lebanese"},
+      {"name": "French"},
+      {"name": "Turkish"},
+      {"name": "Spanish"},
+      {"name": "Chinese"},
+      {"name": "Japanese"},
+      {"name": "Korean"}   
+  ],
+
+  "Links":[
+
+    {
+        "name":"american burger facebook",
+        "url":"https://www.facebook.com/AmericanBurger16",
+        "restaurantId":70
+    },
+    {
+        "name":"american burger instagram",
+        "url":"https://www.instagram.com/american.burger_/",
+        "restaurantId":70
+    } ,
+    {
+        "name":"El Walima facebook",
+        "url":"https://www.facebook.com/people/El-Walima-Restaurant/100094598992395/",
+        "restaurantId":71
+    } ,
+    {
+        "name":"El Walima instagram",
+        "url":"https://www.instagram.com/restaurant_elwalima/",
+        "restaurantId":71
+    } ,
+    {
+        "name":"Maharaja Indian facebook",
+        "url":"https://www.facebook.com/maharaja.indian16",
+        "restaurantId":72
+    } ,
+    {
+        "name":"Maharaja Indian instagram",
+        "url":"https://www.instagram.com/maharaja.indian.restaurant/",
+        "restaurantId":72
+    } ,
+    {
+        "name":"Burger & Broast facebook",
+        "url":"https://www.facebook.com/Burger.and.Broast",
+        "restaurantId":73
+    } ,
+    {
+        "name":"Burger & Broast instagram",
+        "url":"https://www.instagram.com/burger.and.broast/",
+        "restaurantId":73
+    } ,
+    {
+        "name":"Tacozza facebook",
+        "url":"https://www.facebook.com/Tacozzadz/?locale=fr_FR",
+        "restaurantId":74
+    } ,
+    {
+        "name":"Tacozza instagram",
+        "url":"https://www.instagram.com/tacozza_dz/?hl=fr",
+        "restaurantId":74
+    } ,
+    {
+        "name":"La Casa del Burger facebook",
+        "url":"https://www.facebook.com/lacasadelburger/posts/-la-casa-del-burger-kouba-200-m%C3%A8tre-de-lh%C3%B4tel-az-vieux-kouba-%EF%B8%8F-0542742282/877027942913754/",
+        "restaurantId":75
+    } ,
+    {
+        "name":"La Casa del Burger instagram",
+        "url":"https://www.instagram.com/lacasa_del_burger/?hl=fr",
+        "restaurantId":75
+    } ,
+    {
+        "name":"Restaurant la Couronne facebook",
+        "url":"https://www.facebook.com/restaurantlacouronnetipaza/?locale=fr_FR",
+        "restaurantId":76
+    } ,
+    {
+        "name":"Restaurant la Couronne instagram",
+        "url":"https://www.instagram.com/explore/locations/2172592749477490/restaurant-la-couronne-tipaza/",
+        "restaurantId":76
+    }
+
+  ],
+
+  "Delivery Person":[
+
+    {
+        "fullName":"Mohamed GERINE",
+        "phone":"0550495562"
+    },
+    {
+        "fullName":"Sadaoui said",
+        "phone":"0570426537"
+    },
+    {
+        "fullName":"Imed Megded",
+        "phone":"0599565467"
+    },
+    {
+        "fullName":"walid nehar",
+        "phone":"0654651099"
+    }
+  ]
+}

@@ -55,6 +55,11 @@ class WilayaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Wilaya
         fields = ['name']
+
+class WilayaSerializerAll(serializers.ModelSerializer):
+    class Meta:
+        model = Wilaya
+        fields = "__all__"
 class CustomTokenObtainPairSerializerPhoneNumber(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):

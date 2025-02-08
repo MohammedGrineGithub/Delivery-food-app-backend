@@ -50,6 +50,8 @@ urlpatterns = [
     path('app/', include([ 
      path('change_status/', views.ChangeOrderStatusView.as_view(), name='change_status'),
      path('all_cuisine_types/', views.AllCuisineTypesView.as_view(), name='all_cuisine_types'),  
+     path('all_wilayas/', views.AllWilayasView.as_view(), name='all_wilayas'),  
+     path('all_delivery_persons/', views.AllDeliveryPersons.as_view(), name='all_delivery_persons'),  
      path('update_restaurant_opening_time/<int:id>/', views.UpdateRestaurantTimingsView.as_view(), name='update_restaurant_opening_time'),                   
     ])),
 ]
