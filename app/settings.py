@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import timedelta
 import os
 import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,12 @@ LOCAL_APPS = [
 
 THIRD_PARTY_APPS = [
     "rest_framework",
-    "corsheaders"
+    "corsheaders",
+    'rest_framework.authtoken' , 
+    "rest_framework_simplejwt",
+    'django.contrib.sites',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
 ]
 
 
@@ -39,6 +45,8 @@ INSTALLED_APPS = [
     *LOCAL_APPS,
     *THIRD_PARTY_APPS
 ]
+
+SITE_ID =  1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,10 +94,8 @@ DATABASES = {
 }
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,  # Default page size for all views
-
-     
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'PAGE_SIZE': 10,  # Default page size for all views
 }
 
 
@@ -133,3 +139,26 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=30),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": False,
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+}
+AUTH_USER_MODEL = "tdm.Customer"
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'tdm.serializers.CustomerSerializer',
+}
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]

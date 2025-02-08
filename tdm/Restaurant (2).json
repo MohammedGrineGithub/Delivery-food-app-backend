@@ -1,0 +1,1471 @@
+{"Restaurant": [
+    
+    {                                                                            
+                "restaurant_name": "American Burger",
+                "logo": {"url": "https://i.ibb.co/QJcxJdL/restautantlogo.png"},
+                "banner_logo": {"url": "https://i.ibb.co/b2cHt8n/image.png"},
+                "location": {
+                    "address": "28a Chem. Sidi Yahia, Hydra",
+                    "wilayaId": 16 ,    
+                    "latitude": 36.74012213913955, 
+                    "longitude": 3.0297991392392087
+                },
+                "cuisine_type":2,
+                "rating": {"reviewers_count": 0, "rating": 0.0},
+                "phone": "0556621469",  
+                "email": "",
+                "delivery_price": 400,
+                "delivery_duration": 30, 
+                "menu": [
+
+                    {
+                        "name": "Burgers",
+                        "items":[
+
+                        { 
+                            "name": "Cheese Burger",
+                            "ingredients": "Bread, Cheese, Meat, Lettuce, Tomato, Onion",
+                            "price":500,
+                            "photo": {"url": "https://i.postimg.cc/6qLYKzxH/front-view-hamburger-menu-assortment.jpg"}
+                        },
+                        
+                        {
+                            "name": "Smash Burger",
+                            "ingredients": "Fresh beef, American cheese, Smash sauce, ketchup, lettuce, tomato, pickles, onions",
+                            "price":450,
+                            "photo": {"url": "https://i.postimg.cc/DwY578RK/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "Swiss Burger",
+                            "ingredients": "Fresh beef, Swiss cheese, lettuce, tomato, pickles, onions",  
+                            "price":400,
+                            "photo": {"url": "https://i.postimg.cc/W4BnJx2W/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "Classic Burger",
+                            "ingredients": "Fresh beef, American cheese, lettuce, tomato, pickles, onions",  
+                            "price":350,
+                            "photo": {"url": "https://i.postimg.cc/gcTvwfNv/Sans-titre.jpg"}
+                        }
+                
+
+                    ]
+
+                    },
+                    {
+                        "name": "Tacos",
+                        "items":[
+
+                        { 
+                            "name": "Chicken Tacos",
+                            "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",
+                            "price":500,
+                            "photo": {"url": "https://i.postimg.cc/WpgZ5XVZ/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": " Philly Cheese Steak Tacos",
+                            "ingredients": "Cheese, Onion, Pepper, Sauce",
+                            "price":450,
+                            "photo": {"url": "https://i.postimg.cc/Hks7smy0/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "Mixt Tacos",
+                            "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",  
+                            "price":400,
+                            "photo": {"url": "https://i.postimg.cc/nrJX8fxD/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "meat Tacos",
+                            "ingredients": " Fresh meat, American cheese, lettuce, tomato, pickles, onions",  
+                            "price":350,
+                            "photo": {"url": "https://i.postimg.cc/j5NDkdpT/Sans-titre.jpg"}
+                        }
+                
+
+                    ]
+
+                    },
+                    {
+                        "name": "Sandwiches",
+                        "items":[
+
+                        { 
+                            "name": "Chicken Sandwich",
+                            "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",
+                            "price":500,
+                            "photo": {"url": "https://i.postimg.cc/zXpVQQcy/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": " Philly Cheese Steak Sandwich",
+                            "ingredients": "Cheese, Onion, Pepper, Sauce",
+                            "price":450,
+                            "photo": {"url": "https://i.postimg.cc/9Qnzm7VV/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "Mixt Sandwich",
+                            "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",  
+                            "price":400,
+                            "photo": {"url": "https://i.postimg.cc/25LyVS8W/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "meat Sandwich",
+                            "ingredients": " Fresh meat, American cheese, lettuce, tomato, pickles, onions",  
+                            "price":350,
+                            "photo": {"url": "https://i.postimg.cc/qR0r4Jt4/Sans-titre.jpg"}
+                        }
+                
+
+                    ]
+
+                    },
+                    {
+                        "name": "Pizza",
+                        "items": [
+                            {
+                                "name": "Margherita",
+                                "ingredients": "Tomato sauce, Mozzarella, Basil",
+                                "price": 600,
+                                "photo": {"url": "https://i.postimg.cc/WbdBRF90/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Pepperoni",
+                                "ingredients": "Tomato sauce, Mozzarella, Pepperoni",
+                                "price": 700,
+                                "photo": {"url": "https://i.postimg.cc/7YjpqHcd/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "BBQ Chicken",
+                                "ingredients": "BBQ sauce, Mozzarella, Chicken, Red onions, Cilantro",
+                                "price": 750,
+                                "photo": {"url": "https://i.postimg.cc/mgMKkxWD/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Veggie",
+                                "ingredients": "Tomato sauce, Mozzarella, Bell peppers, Olives, Onions, Mushrooms",
+                                "price": 650,
+                                "photo": {"url": "https://i.postimg.cc/pdH4n0PB/Sans-titre.jpg"}
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Salads",
+                        "items": [
+                            {
+                                "name": "Caesar Salad",
+                                "ingredients": "Romaine, Parmesan, Croutons, Caesar dressing",
+                                "price": 400,
+                                "photo": {"url": "https://i.postimg.cc/N0kV81Mv/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Greek Salad",
+                                "ingredients": "Romaine, Cucumbers, Tomatoes, Olives, Feta, Greek dressing",
+                                "price": 450,
+                                "photo": {"url": "https://i.postimg.cc/tTRcBYZZ/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Cobb Salad",
+                                "ingredients": "Romaine, Chicken, Bacon, Avocado, Egg, Blue cheese, Ranch dressing",
+                                "price": 500,
+                                "photo": {"url": "https://i.postimg.cc/FRPB8N3P/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "House Salad",
+                                "ingredients": "Romaine, Cucumbers, Tomatoes, Carrots, Croutons, Balsamic vinaigrette",
+                                "price": 350,
+                                "photo": {"url": "https://i.postimg.cc/rsKPL39q/Sans-titre.jpg"}
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Desserts",
+                        "items": [
+                            {
+                                "name": "Chocolate Cake",
+                                "ingredients": "Chocolate cake, Chocolate frosting",
+                                "price": 300,
+                                "photo": {"url": "https://i.postimg.cc/tgkSnpSX/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Cheesecake",
+                                "ingredients": "Graham cracker crust, Cream cheese, Sour cream",
+                                "price": 350,
+                                "photo": {"url": "https://i.postimg.cc/k45jxzzW/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Apple Pie",
+                                "ingredients": "Pie crust, Apples, Sugar, Cinnamon",
+                                "price":350,
+                                "photo": {"url": "https://i.postimg.cc/jqDTTF2W/Sans-titre.jpg"}
+                            },
+                            {
+                                    "name": "Ice Cream",
+                                    "ingredients": "Milk, Sugar, Cream, Vanilla",
+                                    "price": 200,
+                                    "photo": {"url": "https://i.postimg.cc/VNkTRJbS/Sans-titre.jpg"}
+                            }
+                            ]
+                        },
+                        {
+                            "name": "Plats",
+                            "items": [
+                                {
+                                    "name": "Grilled Chicken",
+                                    "ingredients": "Chicken, Spices, Lemon, Garlic",
+                                    "price": 800,
+                                    "photo": {"url": "https://i.postimg.cc/fR25MBJL/Sans-titre.jpg"}
+                                },
+                                {
+                                    "name": "Meat Steak",
+                                    "ingredients": "meat, Salt, Pepper, Garlic Butter",
+                                    "price": 1200,
+                                    "photo": {"url": "https://i.postimg.cc/rmW9CTg0/Sans-titre.jpg"}
+                                },
+                                {
+                                    "name": "Fish Fillet",
+                                    "ingredients": "Fish, Lemon, Herbs, Olive Oil",
+                                    "price": 900,
+                                    "photo": {"url": "https://i.postimg.cc/yYnyTvhP/Sans-titre.jpg"}
+                                },
+                                {
+                                    "name": "Vegetable Stir Fry",
+                                    "ingredients": "Broccoli, Carrots, Bell Peppers, Soy Sauce",
+                                    "price": 600,
+                                    "photo": {"url": "https://i.postimg.cc/xdNGnQwx/Sans-titre.jpg"}
+                                }
+                            ]
+                        }
+                                
+
+                ], 
+
+                "opening_time": "11:00:00",
+                "closing_time": "00:00:00"
+},
+
+
+{
+    "restaurant_name": "Restaurant El Walima",
+    "logo": {"url": "https://i.postimg.cc/c4sCG869/396280672-177653725397926-3401010228898050025-n.jpg"},
+    "banner_logo": {"url": "https://i.postimg.cc/TP8XGZCd/419242851-243572912139340-8463432995848501914-n.png"},
+    "location": {
+        "address": "22 Rue Ahmed Zabana, Sidi M'Hamed 16000",
+        "wilayaId": 16 ,
+        "latitude": 36.765799840121645, 
+        "longitude": 3.0560383081685747
+    },
+    "cuisine_type": 1 ,
+    "rating": {"reviewers_count": 0, "rating": 0.0},
+    "phone": "0540754145",  
+    "email": "",
+    "delivery_price": 400,
+    "delivery_duration": 30, 
+    "menu": [
+
+        {
+        "name": "Chekhchoukha",
+        "items":[
+        
+        {
+            "name": "Chekh Biskra",
+            "ingredients": "Chekhchoukha, Red sauce, Meat, Hummus",
+            "price":570,
+            "photo": {"url": "https://www.radiofrance.fr/s3/cruiser-production-eu3/2024/02/d38a441d-8002-4600-8f4a-d78da115aed9/1200x680_sc_chak.jpg"}
+        },
+        {
+            "name": "Chekh Alger",
+            "ingredients": "Chekhchoukha, Red sauce, Chicken, Onion, Hummus",
+            "price":450,
+            "photo": {"url": "https://img-global.cpcdn.com/recipes/0425363ab50a0615/680x482cq70/chakchouka-algerienne-photo-principale-de-la-recette.jpg"}
+        },
+        {
+            "name": "Chekh Tipaza",
+            "ingredients": "Chekhchoukha, Red sauce, Eggs",
+            "price":650,
+            "photo": {"url": "https://img-global.cpcdn.com/recipes/0425363ab50a0615/680x482cq70/chakchouka-algerienne-photo-principale-de-la-recette.jpg"}
+        }
+        
+        
+        ]
+        
+        
+        },
+        {
+        "name": "Couscous",
+        "items":[
+        
+        {
+            "name": "Couscous Alger",
+            "ingredients": "Couscous, White sauce, Potatoes, Chicken, Meat, Eggs, Hummus, Carrots",
+            "price":400,
+            "photo": {"url": "https://fac.img.pmdstatic.net/fit/~1~fac~2022~01~27~c61aaf77-2e2a-4970-80db-0669a2429a6b.jpeg/750x562/quality/80/crop-from/center/cr/wqkgSVNUT0NLL0dFVFRZIElNQUdFUyAvIEZlbW1lIEFjdHVlbGxl/couscous-algerien.jpeg"}
+        },
+        {
+            "name": "Couscous Tipaza",
+            "ingredients": "Couscous, Red sauce, Fish, Butter, Pepper",
+            "price":600,
+            "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx7Qgnc38r9csFIoNSPqZ66sLZcieqaefAhw&s"}
+        }
+        
+        
+        ]
+        
+        
+        },
+        {
+            "name": "Rechta",
+            "items":[
+            
+            {
+                "name": "Rechta Alger",
+                "ingredients": " Chtitha, White sauce, Potatoes, Chicken, Meat, Eggs, Hummus, Carrots",
+                "price":400,
+                "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR08-aNmuckmEFcwhVcrr-auDYRqGONmRlazg&s"}
+            },
+            {
+                "name": "Rechta Tipaza",
+                "ingredients": "Couscous, Red sauce, Fish, Butter, Pepper",
+                "price":600,
+                "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsd_JOMRzBWY8bLMhprv8bFrCvijzcogJgfQ&s"}
+            }
+            
+            
+            ]
+            
+            
+            },
+            {
+                "name": "Tajine",
+                "items":[
+                
+                {
+                    "name": "Tajine zitoun",
+                    "ingredients": " Tajin, White sauce, Potatoes, Chicken, Meat, Eggs, Hummus, Carrots",
+                    "price":400,
+                    "photo": {"url": "https://ffcuisine.fr/wp-content/uploads/2024/03/1711926190_recette-tajine-de-poulet-a-la-marocaine-cookeo-saveurs-orientales-en-un-clic-1024x574.jpg"}
+                },
+                {
+                    "name": "Tajine simple",
+                    "ingredients": "Couscous, Red sauce, Fish, Butter, Pepper",
+                    "price":600,
+                    "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSwWPW91dw8WOIjNUiyTsPt3B6YgnlZGCKxg&s"}
+                }
+                
+                
+                ]
+                
+                
+                }
+
+        ],  
+                
+    "opening_time": "11:00:00",
+    "closing_time": "23:00:00"
+},
+
+
+{
+    "restaurant_name": "Maharaja Indian Restaurant",
+    "logo": {"url": "https://i.postimg.cc/90YKbZ17/Maharaja-Logo-150x150.png"},
+    "banner_logo": {"url": "https://i.postimg.cc/nrJNq0Kx/Presentation-accueil-900x1430.jpg"},
+    "location": {
+        "address": "02, Cite Courbet,, Oran",
+        "wilayaId": 31 ,
+        "latitude": 36.54677027986613, 
+        "longitude":  -0.6925145892753868
+    },
+    "cuisine_type": 3 ,
+    "rating": {"reviewers_count": 0, "rating": 0.0},
+    "phone": "0550495562",  
+    "email": "",
+    "delivery_price": 400,
+    "delivery_duration": 30, 
+    "menu": [
+
+         {
+            "name": "Grillades",
+            "items":[
+
+            
+            {
+                "name": "Chicken malai kabab",
+                "ingredients": "Poulet sans os, mariné la veille dans une pate Spéciale, noix de cajou, fromage grillé dans un four en terre cuite.",
+                "price":1300,
+                "photo": {"url": "https://i.postimg.cc/bN78vHWz/Chicken-malai-kabab.webp"}
+            },
+            
+            {
+                "name": "Chicken tikka",
+                "ingredients": "Morceaux de poulet sans os marinés la veille dans un yaourt épicé, du gingembre, et de l'ail, cuits dans un four en terre.",
+                "price":1300,
+                "photo": {"url": "https://i.postimg.cc/tCZpymrS/Chicken-tikka.webp"}
+            },
+            
+            {
+                "name": "Chicken purluf",
+                "ingredients": "Poulet sans os, mariné avec du fromage, de la crème et des herbes, grillé dans un four en terre.",
+                "price":1300,
+                "photo": {"url": "https://i.postimg.cc/tRmpKHzn/Chicken-purluf.webp"}
+            },
+            
+            {
+                "name": "Chicken tandoori",
+                "ingredients": "Cuisses de poulet marinés dans un lait caillé avec des épices typiquement indiennes et grillé au charbon de bois dans un four en terre.",
+                "price":1350,
+                "photo": {"url": "https://i.postimg.cc/3N6hmgwF/Chicken-tandoori.webp"}
+            }
+
+            ]
+
+        } ,
+        {
+            "name": "Spécialités poulets",
+            "items":[
+
+            
+            {
+                "name": "Maharaja special butter chicken",
+                "ingredients": "Morceaux de poulet sans os partiellement grillés sur du charbon de bois avec une sauce tomate, du beurre et de la crème.",
+                "price":1400,
+                "photo": {"url": "https://i.postimg.cc/Kj4F19mY/Maharaja-a-special-butter-chicken.webp"}
+            },
+            
+            {
+                "name": "Chicken tikka masala",
+                "ingredients": "Morceaux de Tikka cuits avec des oignons hachés, de la sauce tomate enveloppés dans du beurre et de la crème",
+                "price":1400,
+                "photo": {"url": "https://i.postimg.cc/xC6nTrD7/Chicken-tikka-masala-1.webp"}
+            },
+            
+            {
+                "name": "Chicken curry",
+                "ingredients": "Morceaux de poulet succulents grillés avec des épices Masala, mets délicats de la cuisine de la maison Royale de Patiala.",
+                "price":1400,
+                "photo": {"url": "https://i.postimg.cc/fbjMptHM/Chicken-curry.webp"}
+            },
+            
+            {
+                "name": "Chicken nizami korma",
+                "ingredients": "Morceaux de poulet succulents grillés avec des épices Masala, mets délicats de la cuisine de la maison Royale de Patiala.",
+                "price":1550,
+                "photo": {"url": "https://i.postimg.cc/KYyZ0rD9/Chicken-nizami-korma.webp"}
+            }
+
+            ]
+
+        },
+        {
+            "name": "Spécialités moutons",
+            "items":[
+
+            
+            {
+                "name": "Rogan josh-kashmiri",
+                "ingredients": "Curry exotique à l'agneau dans le pure style du Cachemire.",
+                "price":1750,
+                "photo": {"url": "https://i.postimg.cc/zGhzwPKb/Rogan-josh-kashmiri.webp"}
+            },
+            
+            {
+                "name": "Gosht badami-korma",
+                "ingredients": "Viande de mouton préparée dans une sauce aux amandes avec une pincée de safran.",
+                "price":1850,
+                "photo": {"url": "https://i.postimg.cc/SN3QMp2b/Gosht-badami-korma.webp"}
+            },
+            
+            {
+                "name": "Rahra meat ",
+                "ingredients": "Viande de mouton préparée avec de la viande hachée et des épices authentique.",
+                "price":1950,
+                "photo": {"url": "https://i.postimg.cc/TYpY1PPc/Rahra-meat.webp"}
+            },
+            
+            {
+                "name": "Sag-meat",
+                "ingredients": "Viande de mouton à la base de purée d'épinards et d'épices faites maison.",
+                "price":1750,
+                "photo": {"url": "https://i.postimg.cc/SQZxm9ms/Sag-meat.webp"}
+            }
+
+            ]
+
+        },
+        {
+            "name": "Spécialité riz",
+            "items":[
+
+            
+            {
+                "name": "Maharaja special biryani",
+                "ingredients": "Riz Biryani préparé avec la viande d'agneau, du poulet, une pincée de safran et de Ghee végétal.",
+                "price":1800,
+                "photo": {"url": "https://i.postimg.cc/C5JBgrmL/Maharaja-special-biryani.webp"}
+            },
+            
+            {
+                "name": "Chicken biryani",
+                "ingredients": "Riz Biryani préparé avec du poulet, un mélange d'épices indiennes, dans un style typiquement indien (Dum Biryani)",
+                "price":1550,
+                "photo": {"url": "https://i.postimg.cc/RhxQFY77/Chicken-biryani-shan-e-awadh.webp"}
+            },
+            
+            {
+                "name": "Mutton biryani",
+                "ingredients": "Riz Biryani préparé avec la viande d'agneau et un mélange d'épices, dans un véritable style hydrabi.",
+                "price":1600,
+                "photo": {"url": "https://i.postimg.cc/qR3xpr3B/Mutton-biryani-hydrabadi.webp"}
+            },
+            
+            {
+                "name": "Rice biryani",
+                "ingredients": "Riz Basmati préparé dans un véritable style Hydrabadi.",
+                "price":1350,
+                "photo": {"url": "https://i.postimg.cc/s28JFx10/Rice-biryani.webp"}
+            }
+
+            ]
+
+        }
+
+      
+
+
+
+]
+},
+
+
+{
+    "restaurant_name": "Burger & Broast",
+    "logo": {"url": "https://i.postimg.cc/T1Zwf8nx/Capture-d-cran-2025-01-09-175343.png"},
+    "banner_logo": {"url": "https://i.postimg.cc/NfHFbMwj/Capture-d-cran-2025-01-09-175335.png"},
+    "location": {
+        "address": "Constantine 25019",
+        "wilayaId": 25 ,
+        "latitude": 36.33529338980974, 
+        "longitude": 6.583152455234771
+    },
+    "cuisine_type": 1 ,
+    "rating": {"reviewers_count": 0, "rating": 0.0},
+    "phone": "0559317595",  
+    "email": "",
+    "delivery_price": 400,
+    "delivery_duration": 30, 
+    "menu": [
+
+                    {
+                        "name": "Burgers",
+                        "items":[
+
+                        { 
+                            "name": "Cheese Burger",
+                            "ingredients": "Bread, Cheese, Meat, Lettuce, Tomato, Onion",
+                            "price":500,
+                            "photo": {"url": "https://i.postimg.cc/6qLYKzxH/front-view-hamburger-menu-assortment.jpg"}
+                        },
+                        
+                        {
+                            "name": "Smash Burger",
+                            "ingredients": "Fresh beef, American cheese, Smash sauce, ketchup, lettuce, tomato, pickles, onions",
+                            "price":450,
+                            "photo": {"url": "https://i.postimg.cc/DwY578RK/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "Swiss Burger",
+                            "ingredients": "Fresh beef, Swiss cheese, lettuce, tomato, pickles, onions",  
+                            "price":400,
+                            "photo": {"url": "https://i.postimg.cc/W4BnJx2W/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "Classic Burger",
+                            "ingredients": "Fresh beef, American cheese, lettuce, tomato, pickles, onions",  
+                            "price":350,
+                            "photo": {"url": "https://i.postimg.cc/gcTvwfNv/Sans-titre.jpg"}
+                        }
+                
+
+                    ]
+
+                    },
+                    {
+                        "name": "Tacos",
+                        "items":[
+
+                        { 
+                            "name": "Chicken Tacos",
+                            "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",
+                            "price":500,
+                            "photo": {"url": "https://i.postimg.cc/WpgZ5XVZ/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": " Philly Cheese Steak Tacos",
+                            "ingredients": "Cheese, Onion, Pepper, Sauce",
+                            "price":450,
+                            "photo": {"url": "https://i.postimg.cc/Hks7smy0/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "Mixt Tacos",
+                            "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",  
+                            "price":400,
+                            "photo": {"url": "https://i.postimg.cc/nrJX8fxD/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "meat Tacos",
+                            "ingredients": " Fresh meat, American cheese, lettuce, tomato, pickles, onions",  
+                            "price":350,
+                            "photo": {"url": "https://i.postimg.cc/j5NDkdpT/Sans-titre.jpg"}
+                        }
+                
+
+                    ]
+
+                    },
+                    {
+                        "name": "Sandwiches",
+                        "items":[
+
+                        { 
+                            "name": "Chicken Sandwich",
+                            "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",
+                            "price":500,
+                            "photo": {"url": "https://i.postimg.cc/zXpVQQcy/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": " Philly Cheese Steak Sandwich",
+                            "ingredients": "Cheese, Onion, Pepper, Sauce",
+                            "price":450,
+                            "photo": {"url": "https://i.postimg.cc/9Qnzm7VV/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "Mixt Sandwich",
+                            "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",  
+                            "price":400,
+                            "photo": {"url": "https://i.postimg.cc/25LyVS8W/Sans-titre.jpg"}
+                        },
+                        
+                        {
+                            "name": "meat Sandwich",
+                            "ingredients": " Fresh meat, American cheese, lettuce, tomato, pickles, onions",  
+                            "price":350,
+                            "photo": {"url": "https://i.postimg.cc/qR0r4Jt4/Sans-titre.jpg"}
+                        }
+                
+
+                    ]
+
+                    },
+                    {
+                        "name": "Pizza",
+                        "items": [
+                            {
+                                "name": "Margherita",
+                                "ingredients": "Tomato sauce, Mozzarella, Basil",
+                                "price": 600,
+                                "photo": {"url": "https://i.postimg.cc/WbdBRF90/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Pepperoni",
+                                "ingredients": "Tomato sauce, Mozzarella, Pepperoni",
+                                "price": 700,
+                                "photo": {"url": "https://i.postimg.cc/7YjpqHcd/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "BBQ Chicken",
+                                "ingredients": "BBQ sauce, Mozzarella, Chicken, Red onions, Cilantro",
+                                "price": 750,
+                                "photo": {"url": "https://i.postimg.cc/mgMKkxWD/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Veggie",
+                                "ingredients": "Tomato sauce, Mozzarella, Bell peppers, Olives, Onions, Mushrooms",
+                                "price": 650,
+                                "photo": {"url": "https://i.postimg.cc/pdH4n0PB/Sans-titre.jpg"}
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Salads",
+                        "items": [
+                            {
+                                "name": "Caesar Salad",
+                                "ingredients": "Romaine, Parmesan, Croutons, Caesar dressing",
+                                "price": 400,
+                                "photo": {"url": "https://i.postimg.cc/N0kV81Mv/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Greek Salad",
+                                "ingredients": "Romaine, Cucumbers, Tomatoes, Olives, Feta, Greek dressing",
+                                "price": 450,
+                                "photo": {"url": "https://i.postimg.cc/tTRcBYZZ/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Cobb Salad",
+                                "ingredients": "Romaine, Chicken, Bacon, Avocado, Egg, Blue cheese, Ranch dressing",
+                                "price": 500,
+                                "photo": {"url": "https://i.postimg.cc/FRPB8N3P/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "House Salad",
+                                "ingredients": "Romaine, Cucumbers, Tomatoes, Carrots, Croutons, Balsamic vinaigrette",
+                                "price": 350,
+                                "photo": {"url": "https://i.postimg.cc/rsKPL39q/Sans-titre.jpg"}
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Desserts",
+                        "items": [
+                            {
+                                "name": "Chocolate Cake",
+                                "ingredients": "Chocolate cake, Chocolate frosting",
+                                "price": 300,
+                                "photo": {"url": "https://i.postimg.cc/tgkSnpSX/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Cheesecake",
+                                "ingredients": "Graham cracker crust, Cream cheese, Sour cream",
+                                "price": 350,
+                                "photo": {"url": "https://i.postimg.cc/k45jxzzW/Sans-titre.jpg"}
+                            },
+                            {
+                                "name": "Apple Pie",
+                                "ingredients": "Pie crust, Apples, Sugar, Cinnamon",
+                                "price":350,
+                                "photo": {"url": "https://i.postimg.cc/jqDTTF2W/Sans-titre.jpg"}
+                            },
+                            {
+                                    "name": "Ice Cream",
+                                    "ingredients": "Milk, Sugar, Cream, Vanilla",
+                                    "price": 200,
+                                    "photo": {"url": "https://i.postimg.cc/VNkTRJbS/Sans-titre.jpg"}
+                            }
+                            ]
+                        },
+                        {
+                            "name": "Plats",
+                            "items": [
+                                {
+                                    "name": "Grilled Chicken",
+                                    "ingredients": "Chicken, Spices, Lemon, Garlic",
+                                    "price": 800,
+                                    "photo": {"url": "https://i.postimg.cc/fR25MBJL/Sans-titre.jpg"}
+                                },
+                                {
+                                    "name": "Meat Steak",
+                                    "ingredients": "meat, Salt, Pepper, Garlic Butter",
+                                    "price": 1200,
+                                    "photo": {"url": "https://i.postimg.cc/rmW9CTg0/Sans-titre.jpg"}
+                                },
+                                {
+                                    "name": "Fish Fillet",
+                                    "ingredients": "Fish, Lemon, Herbs, Olive Oil",
+                                    "price": 900,
+                                    "photo": {"url": "https://i.postimg.cc/yYnyTvhP/Sans-titre.jpg"}
+                                },
+                                {
+                                    "name": "Vegetable Stir Fry",
+                                    "ingredients": "Broccoli, Carrots, Bell Peppers, Soy Sauce",
+                                    "price": 600,
+                                    "photo": {"url": "https://i.postimg.cc/xdNGnQwx/Sans-titre.jpg"}
+                                }
+                            ]
+                        }
+                                
+
+                ]
+},
+
+{
+    "restaurant_name": "Tacozza",
+    "logo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3a9bC67pnkc3h7JTXGnooTHeez0qpL6-9nQ&s"},
+    "banner_logo": {"url": "https://images.eatself.com/2946/Products_212404_Products_212404_302455613_616628753445652_4740470279227947905_n_thumb.jpg"},
+    "location": {
+        "address": "Garidi en face el banna, Kouba",
+        "wilayaId": 16 ,    
+        "latitude":36.725440924499324, 
+        "longitude": 3.072092055951736
+    },
+    "cuisine_type":2,
+    "rating": {"reviewers_count": 0, "rating": 0.0},
+    "phone": "0561748889",  
+    "email": "",
+    "delivery_price": 500,
+    "delivery_duration": 25, 
+    "menu": [
+
+        {
+            "name": "Burgers",
+            "items":[
+
+            { 
+                "name": "Cheese Burger",
+                "ingredients": "Bread, Cheese, Meat, Lettuce, Tomato, Onion",
+                "price":250,
+                "photo": {"url": "https://images.eatself.com/2946/Products_212351_274702733_484447719997090_4563517621965483030_n_thumb.jpg"}
+            },
+            
+            {
+                "name": "Smash Burger",
+                "ingredients": "Fresh beef, American cheese, Smash sauce, ketchup, lettuce, tomato, pickles, onions, on a classic bun",
+                "price":750,
+                "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJkFYloAPI_2SmOvOP2L5jJ7SXU_1y8CT7DmQlTD4Hca9qUg6O0hgY53XaeundL39EyzA&usqp=CAU"}
+            },
+            
+            {
+                "name": "Swiss Burger",
+                "ingredients": "Fresh beef, Swiss cheese, lettuce, tomato, pickles, onions, on a classic bun",  
+                "price":450,
+                "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaVLVEXHRyseO_zQuInHeNuKELC8JKZaaaOzuLCRbxVDNcS8wXUyW3b6YGJfUO4X4EuSg&usqp=CAU"}
+            },
+            
+            {
+                "name": "Classic Burger",
+                "ingredients": "Fresh beef, American cheese, lettuce, tomato, pickles, onions, on a classic bun",  
+                "price":350,
+                "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMgnTpXUClkg9ipWiQh5NYXcE-lWTRyMiDzg&s"}
+            }
+    
+
+        ]
+
+        },
+        {
+            "name": "Tacos",
+            "items":[
+
+            { 
+                "name": "Chicken Tacos",
+                "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",
+                "price":600,
+                "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrOX6MdXFbS1KY628P-eLEjzfP1wsuc7dDFA&s"}
+            },
+            
+            {
+                "name": "Meet Tacos",
+                "ingredients": "Fresh beef, American cheese, Smash sauce, ketchup, lettuce, tomato, pickles, onions, on a classic bun",
+                "price":900,
+                "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWSSylXdfdgNaORPogMWQtRX20rz4cXiJ6iw&s"}
+            },
+            
+            {
+                "name": "Tacos Mixt",
+                "ingredients": "Fresh beef, Swiss cheese, lettuce, tomato, pickles, onions, on a classic bun",  
+                "price":1200,
+                "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzlzglms9Ylgbw732J5RYzMJFJlIANrwC4rQ&s"}
+            }
+        ]
+
+        }
+
+    ], 
+
+    "opening_time": "11:00:00",
+    "closing_time": "23:30:00"
+},
+
+
+{
+"restaurant_name": "La Casa del Burger",
+"logo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp4sbXWmiTVHZoWurURZGwbkLq8fQjzbxA1A&s"},
+"banner_logo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPe1ooGDuO457z9DmDAVf8mMSwA2Knlc1Ilw&s"},
+"location": {
+"address": "Rue Nadjet Slimane, Kouba",
+"wilayaId": 16 ,
+"latitude": 36.727988879417126,
+"longitude": 3.077429857672399
+},
+"cuisine_type": 2 ,
+"rating": {"reviewers_count": 0, "rating": 0.0},
+"phone": "0542742282",  
+"email": "",
+"delivery_price": 600,
+"delivery_duration": 35, 
+"menu": [
+
+{
+"name": "Burgers",
+"items":[
+
+
+{
+    "name": "Cheese Burger",
+    "ingredients": "Bread, Cheese, Meat, Lettuce, Tomato, Onion",
+    "price":400,
+    "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNiVPNWWomYVZSc5rRQhbbcQwUbGWmZeuKoA&s"}
+},
+{
+    "name": "Meat Burger",
+    "ingredients": "Bread, Cheese, Meat, Lettuce, Tomato, Onion",
+    "price":500,
+    "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7f0cXH3fTsiaVfp3KtDAeAfLo9s1boSVZpA&s"}
+},
+{
+    "name": "Fish Burger",
+    "ingredients": "Bread, Cheese, Fish, Tomato, Onion",
+    "price":700,
+    "photo": {"url": "https://tb-static.uber.com/prod/image-proc/processed_images/ef63b34e85e16bd1074747b6ec9cf350/fb86662148be855d931b37d6c1e5fcbe.jpeg"}
+}
+
+]
+
+
+},
+{
+"name": "Pizza",
+"items":[
+
+{
+    "name": "Pizza Simple",
+    "ingredients": "Cheese, Tomato, Onion",
+    "price":500,
+    "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_DiU7ia9ra27fR367MVY8PDAkNwc1FeNYcA&s"}
+},
+{
+    "name": "Pizza 4 Saisons",
+    "ingredients": "Cheese, Meat, Vegetables, Tomato, Onion, Pineapple",
+    "price":900,
+    "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuBHXb_KZGMeDgVTEf3Cu8tvzEQSaeMhCcFQ&s"}
+},
+{
+    "name": "Pizza Mega",
+    "ingredients": "Cheese, Tomato, Onion, Fish, Mashrooms, Pepperoni, Chicken",
+    "price":2700,
+    "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg38y2wh1bdh5vtMmMeDQoBo-6Zc64Yau45UOkt7XAqix2Fg3h1wiRg-X4zFInniJaeZI&usqp=CAU"}
+}
+
+
+]
+},
+{
+    "name": "Sandwiches",
+    "items":[
+
+    { 
+        "name": "Chicken Sandwich",
+        "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",
+        "price":500,
+        "photo": {"url": "https://i.postimg.cc/zXpVQQcy/Sans-titre.jpg"}
+    },
+    
+    {
+        "name": " Philly Cheese Steak Sandwich",
+        "ingredients": "Cheese, Onion, Pepper, Sauce",
+        "price":450,
+        "photo": {"url": "https://i.postimg.cc/9Qnzm7VV/Sans-titre.jpg"}
+    },
+    
+    {
+        "name": "Mixt Sandwich",
+        "ingredients": "Chicken, Lettuce, Tomato, Onion, Cheese, Sauce",  
+        "price":400,
+        "photo": {"url": "https://i.postimg.cc/25LyVS8W/Sans-titre.jpg"}
+    },
+    
+    {
+        "name": "meat Sandwich",
+        "ingredients": " Fresh meat, American cheese, lettuce, tomato, pickles, onions",  
+        "price":350,
+        "photo": {"url": "https://i.postimg.cc/qR0r4Jt4/Sans-titre.jpg"}
+    }
+
+
+]
+
+},
+{
+    "name": "Pizza",
+    "items": [
+        {
+            "name": "Margherita",
+            "ingredients": "Tomato sauce, Mozzarella, Basil",
+            "price": 600,
+            "photo": {"url": "https://i.postimg.cc/WbdBRF90/Sans-titre.jpg"}
+        },
+        {
+            "name": "Pepperoni",
+            "ingredients": "Tomato sauce, Mozzarella, Pepperoni",
+            "price": 700,
+            "photo": {"url": "https://i.postimg.cc/7YjpqHcd/Sans-titre.jpg"}
+        },
+        {
+            "name": "BBQ Chicken",
+            "ingredients": "BBQ sauce, Mozzarella, Chicken, Red onions, Cilantro",
+            "price": 750,
+            "photo": {"url": "https://i.postimg.cc/mgMKkxWD/Sans-titre.jpg"}
+        },
+        {
+            "name": "Veggie",
+            "ingredients": "Tomato sauce, Mozzarella, Bell peppers, Olives, Onions, Mushrooms",
+            "price": 650,
+            "photo": {"url": "https://i.postimg.cc/pdH4n0PB/Sans-titre.jpg"}
+        }
+    ]
+},
+{
+    "name": "Salads",
+    "items": [
+        {
+            "name": "Caesar Salad",
+            "ingredients": "Romaine, Parmesan, Croutons, Caesar dressing",
+            "price": 400,
+            "photo": {"url": "https://i.postimg.cc/N0kV81Mv/Sans-titre.jpg"}
+        },
+        {
+            "name": "Greek Salad",
+            "ingredients": "Romaine, Cucumbers, Tomatoes, Olives, Feta, Greek dressing",
+            "price": 450,
+            "photo": {"url": "https://i.postimg.cc/tTRcBYZZ/Sans-titre.jpg"}
+        },
+        {
+            "name": "Cobb Salad",
+            "ingredients": "Romaine, Chicken, Bacon, Avocado, Egg, Blue cheese, Ranch dressing",
+            "price": 500,
+            "photo": {"url": "https://i.postimg.cc/FRPB8N3P/Sans-titre.jpg"}
+        },
+        {
+            "name": "House Salad",
+            "ingredients": "Romaine, Cucumbers, Tomatoes, Carrots, Croutons, Balsamic vinaigrette",
+            "price": 350,
+            "photo": {"url": "https://i.postimg.cc/rsKPL39q/Sans-titre.jpg"}
+        }
+    ]
+},
+{
+    "name": "Desserts",
+    "items": [
+        {
+            "name": "Chocolate Cake",
+            "ingredients": "Chocolate cake, Chocolate frosting",
+            "price": 300,
+            "photo": {"url": "https://i.postimg.cc/tgkSnpSX/Sans-titre.jpg"}
+        },
+        {
+            "name": "Cheesecake",
+            "ingredients": "Graham cracker crust, Cream cheese, Sour cream",
+            "price": 350,
+            "photo": {"url": "https://i.postimg.cc/k45jxzzW/Sans-titre.jpg"}
+        },
+        {
+            "name": "Apple Pie",
+            "ingredients": "Pie crust, Apples, Sugar, Cinnamon",
+            "price":350,
+            "photo": {"url": "https://i.postimg.cc/jqDTTF2W/Sans-titre.jpg"}
+        },
+        {
+                "name": "Ice Cream",
+                "ingredients": "Milk, Sugar, Cream, Vanilla",
+                "price": 200,
+                "photo": {"url": "https://i.postimg.cc/VNkTRJbS/Sans-titre.jpg"}
+        }
+        ]
+    },
+    {
+        "name": "Plats",
+        "items": [
+            {
+                "name": "Grilled Chicken",
+                "ingredients": "Chicken, Spices, Lemon, Garlic",
+                "price": 800,
+                "photo": {"url": "https://i.postimg.cc/fR25MBJL/Sans-titre.jpg"}
+            },
+            {
+                "name": "Meat Steak",
+                "ingredients": "meat, Salt, Pepper, Garlic Butter",
+                "price": 1200,
+                "photo": {"url": "https://i.postimg.cc/rmW9CTg0/Sans-titre.jpg"}
+            },
+            {
+                "name": "Fish Fillet",
+                "ingredients": "Fish, Lemon, Herbs, Olive Oil",
+                "price": 900,
+                "photo": {"url": "https://i.postimg.cc/yYnyTvhP/Sans-titre.jpg"}
+            },
+            {
+                "name": "Vegetable Stir Fry",
+                "ingredients": "Broccoli, Carrots, Bell Peppers, Soy Sauce",
+                "price": 600,
+                "photo": {"url": "https://i.postimg.cc/xdNGnQwx/Sans-titre.jpg"}
+            }
+        ]
+    }
+], 
+"opening_time": "10:00:00",
+"closing_time": "00:00:00"
+},
+
+
+
+{
+"restaurant_name": "Restaurant la Couronne",
+"logo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjesrxXcZMtKPXOiBmiXUsEBYZBptDT-ddFA&s"},
+"banner_logo": {"url": "https://media.safarway.com/content/1d488991-e209-465f-af8e-c307fa50814b_sm.jpg"},
+"location": {
+"address": "Place Tafza, Tipaza",
+"wilayaId": 42 ,
+"latitude": 36.58971167588056,
+"longitude": 2.4350065382106547
+},
+"cuisine_type": 1 ,
+"rating": {"reviewers_count": 0, "rating": 0.0},
+"phone": "0552169666",  
+"email": "",
+"delivery_price": 300,
+"delivery_duration": 15, 
+"menu": [
+
+{
+"name": "Chekhchoukha",
+"items":[
+
+{
+    "name": "Chekh Biskra",
+    "ingredients": "Chekhchoukha, Red sauce, Meat, Hummus",
+    "price":570,
+    "photo": {"url": "https://www.radiofrance.fr/s3/cruiser-production-eu3/2024/02/d38a441d-8002-4600-8f4a-d78da115aed9/1200x680_sc_chak.jpg"}
+},
+{
+    "name": "Chekh Alger",
+    "ingredients": "Chekhchoukha, Red sauce, Chicken, Onion, Hummus",
+    "price":450,
+    "photo": {"url": "https://img-global.cpcdn.com/recipes/0425363ab50a0615/680x482cq70/chakchouka-algerienne-photo-principale-de-la-recette.jpg"}
+},
+{
+    "name": "Chekh Tipaza",
+    "ingredients": "Chekhchoukha, Red sauce, Eggs",
+    "price":650,
+    "photo": {"url": "https://img-global.cpcdn.com/recipes/0425363ab50a0615/680x482cq70/chakchouka-algerienne-photo-principale-de-la-recette.jpg"}
+}
+
+
+]
+
+
+},
+{
+"name": "Couscous",
+"items":[
+
+{
+    "name": "Couscous Alger",
+    "ingredients": "Couscous, White sauce, Potatoes, Chicken, Meat, Eggs, Hummus, Carrots",
+    "price":400,
+    "photo": {"url": "https://fac.img.pmdstatic.net/fit/~1~fac~2022~01~27~c61aaf77-2e2a-4970-80db-0669a2429a6b.jpeg/750x562/quality/80/crop-from/center/cr/wqkgSVNUT0NLL0dFVFRZIElNQUdFUyAvIEZlbW1lIEFjdHVlbGxl/couscous-algerien.jpeg"}
+},
+{
+    "name": "Couscous Tipaza",
+    "ingredients": "Couscous, Red sauce, Fish, Butter, Pepper",
+    "price":600,
+    "photo": {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx7Qgnc38r9csFIoNSPqZ66sLZcieqaefAhw&s"}
+}
+
+
+]
+
+
+}
+], 
+"opening_time": "05:00:00",
+"closing_time": "01:00:00"
+}
+
+
+
+
+
+]
+
+} 
+
+
+
+
+
+"wilayas": [
+    {"name": "Adrar"},
+    {"name": "Chlef"},
+    {"name": "Laghouat"},
+    {"name": "Oum El Bouaghi"},
+    {"name": "Batna"},
+    {"name": "Béjaïa"},
+    {"name": "Biskra"},
+    {"name": "Béchar"},
+    {"name": "Blida"},
+    {"name": "Bouira"},
+    {"name": "Tamanrasset"},
+    {"name": "Tébessa"},
+    {"name": "Tlemcen"},
+    {"name": "Tiaret"},
+    {"name": "Tizi Ouzou"},
+    {"name": "Alger"},
+    {"name": "Djelfa"},
+    {"name": "Jijel"},
+    {"name": "Sétif"},
+    {"name": "Saïda"},
+    {"name": "Skikda"},
+    {"name": "Sidi Bel Abbès"},
+    {"name": "Annaba"},
+    {"name": "Guelma"},
+    {"name": "Constantine"},
+    {"name": "Médéa"},
+    {"name": "Mostaganem"},
+    {"name": "M'Sila"},
+    {"name": "Mascara"},
+    {"name": "Ouargla"},
+    {"name": "Oran"},
+    {"name": "El Bayadh"},
+    {"name": "Illizi"},
+    {"name": "Bordj Bou Arreridj"},
+    {"name": "Boumerdès"},
+    {"name": "El Tarf"},
+    {"name": "Tindouf"},
+    {"name": "Tissemsilt"},
+    {"name": "El Oued"},
+    {"name": "Khenchela"},
+    {"name": "Souk Ahras"},
+    {"name": "Tipaza"},
+    {"name": "Mila"},
+    {"name": "Aïn Defla"},
+    {"name": "Naâma"},
+    {"name": "Aïn Témouchent"},
+    {"name": "Ghardaïa"},
+    {"name": "Relizane"}
+  ],
+  "cuisine_type":[ 
+
+      {"name": "Traditional"},
+      { "name": "Fast Food"},
+      {"name": "Indian"},
+      {"name": "Mexican"},
+      {"name": "Japanese"},
+      {"name": "Lebanese"},
+      {"name": "French"},
+      {"name": "Turkish"},
+      {"name": "Spanish"},
+      {"name": "Chinese"},
+      {"name": "Japanese"},
+      {"name": "Korean"}   
+  ]
+
+
+  "Links":[
+
+    {
+        "name":"american burger facebook",
+        "url":"https://www.facebook.com/AmericanBurger16",
+        "restaurantId":1
+    },
+    {
+        "name":"american burger instagram",
+        "url":"https://www.instagram.com/american.burger_/",
+        "restaurantId":1
+    } ,
+    {
+        "name":"El Walima facebook",
+        "url":"https://www.facebook.com/people/El-Walima-Restaurant/100094598992395/",
+        "restaurantId":2
+    } ,
+    {
+        "name":"El Walima instagram",
+        "url":"https://www.instagram.com/restaurant_elwalima/",
+        "restaurantId":2
+    } ,
+    {
+        "name":"Maharaja Indian facebook",
+        "url":"https://www.facebook.com/maharaja.indian16",
+        "restaurantId":3
+    } ,
+    {
+        "name":"Maharaja Indian instagram",
+        "url":"https://www.instagram.com/maharaja.indian.restaurant/",
+        "restaurantId":3
+    } ,
+    {
+        "name":"Burger & Broast facebook",
+        "url":"https://www.facebook.com/Burger.and.Broast",
+        "restaurantId":4
+    } ,
+    {
+        "name":"Burger & Broast instagram",
+        "url":"https://www.instagram.com/burger.and.broast/",
+        "restaurantId":4
+    } ,
+    {
+        "name":"Tacozza facebook",
+        "url":"https://www.facebook.com/Tacozzadz/?locale=fr_FR",
+        "restaurantId":5
+    } ,
+    {
+        "name":"Tacozza instagram",
+        "url":"https://www.instagram.com/tacozza_dz/?hl=fr",
+        "restaurantId":5
+    } ,
+    {
+        "name":"La Casa del Burger facebook",
+        "url":"https://www.facebook.com/lacasadelburger/posts/-la-casa-del-burger-kouba-200-m%C3%A8tre-de-lh%C3%B4tel-az-vieux-kouba-%EF%B8%8F-0542742282/877027942913754/",
+        "restaurantId":6
+    } ,
+    {
+        "name":"La Casa del Burger instagram",
+        "url":"https://www.instagram.com/lacasa_del_burger/?hl=fr",
+        "restaurantId":6
+    } ,
+    {
+        "name":"Restaurant la Couronne facebook",
+        "url":"https://www.facebook.com/restaurantlacouronnetipaza/?locale=fr_FR",
+        "restaurantId":7
+    } ,
+    {
+        "name":"Restaurant la Couronne instagram",
+        "url":"https://www.instagram.com/explore/locations/2172592749477490/restaurant-la-couronne-tipaza/",
+        "restaurantId":7
+    } ,
+
+
+
+  ]
+
+  "Delivery Person":[
+
+    {
+        "fullName":"Mohamed GERINE",
+        "phone":"0550495562",
+    },
+    {
+        "fullName":"Sadaoui said",
+        "phone":"0570426537",
+    },
+    {
+        "fullName":"Imed Megded",
+        "phone":"0599565467",
+    },
+    {
+        "fullName":"walid nehar",
+        "phone":"0654651099",
+    }
+  ]
+
+
+
+
+  "Order":[
+  
+  {
+
+    "userId":1,
+    "restaurantId":1,
+    "totalPrice":2500,
+    "createdAt":"20/01/2022",
+    "status":1,
+    "deliveryNote":"Ya le livruer activier chwya ani ji3an",
+    "deliveryPersonId":1
+
+  },
+  {
+
+    "userId":1,
+    "restaurantId":2,
+    "totalPrice":3900,
+    "createdAt":"20/01/2024",
+    "status":3,
+    "deliveryNote":"Ya le livruer activier chwya ani ji3an",
+    "deliveryPersonId":2
+
+  },
+  {
+
+    "userId":1,
+    "restaurantId":3,
+    "totalPrice":5000,
+    "createdAt":"1/01/2025",
+    "status":2,
+    "deliveryNote":"Ya le livruer activier chwya ani ji3an",
+    "deliveryPersonId":3
+
+  },
+
+
+]
+
+
+{
+    "Users" : [
+     {
+         "fullName": "Slimane Zakaria",
+     "email": "zakslimane47@gmail.com",
+     "phone": "0582496327",
+     "location": {
+         "address": "Rue Albertini, El Biar",
+         "wilayaId": 16,
+         "latitude": 36.76968731472243,
+         "longitude":  3.01289939701471
+     },
+     "photo": {
+         "imagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlOOPcOx2GW8wa8Jh9_K23iiruRj16Me9QYw&s"
+     },
+     "has_notification": false,
+     "carts": []
+     },
+     {
+         "fullName": "Akram Charef",
+     "email": "bestcharef01@gmail.com",
+     "phone": "0554996357",
+     "location": {
+         "address": "Tipaza Centre",
+         "wilayaId": 42,
+         "latitude": 36.59174234300822,
+         "longitude":   2.449764368900062
+     },
+     "photo": {
+         "imagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBNYHBfUfHrvvxot_Hzofa5UQ-90k3nKxtkQ&s"
+     },
+     "has_notification": false,
+     "carts": []
+     },
+     {
+         "fullName": "Ahmed Sellami",
+     "email": "ahmedslm57@gmail.com",
+     "phone": "0587284917",
+     "location": {
+         "address": "Rue Hamidi Said, Birkhadem",
+         "wilayaId": 16,
+         "latitude":  36.71455088688122,
+         "longitude":  3.0487518627992256
+     },
+     "photo": {
+         "imagePath": "https://i.pinimg.com/originals/2c/26/dc/2c26dc21b282afeb87684683bb260375.jpg"
+     },
+     "has_notification": false,
+     "carts": []
+     },
+     {
+         "fullName": "Anes Amine Ferhat",
+     "email": "amineanes075@gmail.com",
+     "phone": "0642875193",
+     "location": {
+         "address": "Sidi El Mejdoub, Mostaland",
+         "wilayaId": 27,
+         "latitude": 35.95862702870066,
+         "longitude":  0.09542545352503205
+     },
+     "photo": {
+         "imagePath": "https://i.pinimg.com/280x280_RS/aa/2f/f9/aa2ff9de53d7d2b43382249dfb8c2ee8.jpg"
+     },
+     "has_notification": false,
+     "carts": []
+     }
+ ]
+ }
